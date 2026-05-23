@@ -3,73 +3,53 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>History of Robot — A Chronicle of Robotics, 1500 BCE to 2026</title>
-  <meta name="description" content="An editorial chronicle of robotics in eight eras — from Greek myth and karakuri to Unimate, ASIMO, Atlas, Figure, Optimus and general-purpose embodied AI. 81 milestones, every one cited." />
+  <title>History of Humanoid Robot — From WABOT-1 to Optimus</title>
+  <meta name="description" content="A focused chronicle of humanoid robotics: Waseda WABOT, Honda P-series, ASIMO, HUBO, Atlas, Pepper, Digit, Optimus, Figure, NEO, Apollo, Unitree, AgiBot. 1968–2026, every milestone sourced." />
   <meta name="author" content="History of Robot" />
   <meta name="theme-color" content="#F6F2E6" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#0E0E0C" media="(prefers-color-scheme: dark)" />
   <link rel="license" href="https://creativecommons.org/licenses/by/4.0/" />
-  <link rel="canonical" href="https://historyofrobot.org/" />
-  <link rel="alternate" hreflang="en" href="https://historyofrobot.org/" />
-  <link rel="alternate" hreflang="zh" href="https://historyofrobot.org/?lang=zh" />
-  <link rel="alternate" hreflang="x-default" href="https://historyofrobot.org/" />
+  <link rel="canonical" href="https://historyofrobot.org/humanoid.html" />
+  <link rel="alternate" hreflang="en" href="https://historyofrobot.org/humanoid.html" />
+  <link rel="alternate" hreflang="zh" href="https://historyofrobot.org/humanoid.html?lang=zh" />
+  <link rel="alternate" hreflang="x-default" href="https://historyofrobot.org/humanoid.html" />
 
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="History of Robot — A Chronicle of Robotics" />
-  <meta property="og:description" content="From mythic automata to embodied AI: a bilingual chronicle of robotics in eight eras, every milestone sourced." />
+  <meta property="og:title" content="History of Humanoid Robot" />
+  <meta property="og:description" content="From WABOT-1 to Optimus: fifty years of two legs, two hands and one brain." />
   <meta property="og:locale" content="en_US" />
   <meta property="og:locale:alternate" content="zh_CN" />
-  <meta property="og:url" content="https://historyofrobot.org/" />
+  <meta property="og:url" content="https://historyofrobot.org/humanoid.html" />
   <meta property="og:image" content="https://historyofrobot.org/og.svg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="History of Robot" />
-  <meta name="twitter:description" content="A bilingual editorial chronicle of robotics, 1500 BCE to 2026." />
 
   <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-  <link rel="alternate" type="application/json" title="Timeline data" href="./data/timeline.json" />
-  <link rel="alternate" type="application/json" title="Humanoid timeline data" href="./data/humanoid.json" />
+  <link rel="alternate" type="application/json" href="./data/humanoid.json" />
   <link rel="sitemap" type="application/xml" href="./sitemap.xml" />
 
-  <!-- Speculation Rules: prerender the sister page on hover/intent -->
   <script type="speculationrules">
   {
     "prerender": [
-      { "where": { "href_matches": "/humanoid.html" }, "eagerness": "moderate" }
+      { "where": { "href_matches": "/index.html" }, "eagerness": "moderate" },
+      { "where": { "href_matches": "/" },           "eagerness": "moderate" }
     ]
   }
   </script>
 
-  <!-- JSON-LD structured data: Article + sitelinks -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Article",
-        "headline": "History of Robot — A Chronicle of Robotics",
-        "description": "An editorial chronicle of robotics in eight eras, from antiquity to 2026.",
-        "image": "https://historyofrobot.org/og.svg",
-        "datePublished": "2026-05-23",
-        "dateModified": "2026-05-23",
-        "inLanguage": ["en", "zh"],
-        "author": { "@type": "Organization", "name": "History of Robot" },
-        "publisher": { "@type": "Organization", "name": "History of Robot" },
-        "license": "https://creativecommons.org/licenses/by/4.0/",
-        "isAccessibleForFree": true,
-        "mainEntityOfPage": "https://historyofrobot.org/"
-      },
-      {
-        "@type": "WebSite",
-        "name": "History of Robot",
-        "url": "https://historyofrobot.org/",
-        "inLanguage": ["en", "zh"],
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://historyofrobot.org/?q={search_term}",
-          "query-input": "required name=search_term"
-        }
-      }
-    ]
+    "@type": "Article",
+    "headline": "History of Humanoid Robot",
+    "description": "A focused chronicle of humanoid robotics, 1968–2026.",
+    "image": "https://historyofrobot.org/og.svg",
+    "datePublished": "2026-05-23",
+    "dateModified": "2026-05-23",
+    "inLanguage": ["en", "zh"],
+    "author": { "@type": "Organization", "name": "History of Robot" },
+    "publisher": { "@type": "Organization", "name": "History of Robot" },
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "isPartOf": { "@type": "WebSite", "name": "History of Robot", "url": "https://historyofrobot.org/" }
   }
   </script>
 
@@ -81,13 +61,11 @@
   <link rel="stylesheet" href="./styles.css" />
 
   <script>
-    // Theme + language bootstrap (FOUC-free). Default language: English.
     (function () {
       try {
         var t = localStorage.getItem('hor-theme');
         if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
         if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
-
         var l = localStorage.getItem('hor-lang') || new URLSearchParams(location.search).get('lang') || 'en';
         if (l !== 'zh') l = 'en';
         document.documentElement.setAttribute('lang', l === 'zh' ? 'zh-CN' : 'en');
@@ -96,17 +74,17 @@
     })();
   </script>
 </head>
-<body data-page="main" data-data="./data/timeline.json">
+<body data-page="humanoid" data-data="./data/humanoid.json">
   <div class="progress" id="progress" aria-hidden="true"></div>
 
   <header class="mast" role="banner">
     <div class="mast-left">
-      <div><span class="rule"></span>VOL. I &middot; NO. 01</div>
+      <div><span class="rule"></span>VOL. II &middot; HUMANOID</div>
       <div id="mast-date">SAT &middot; MAY 23, 2026</div>
     </div>
     <div class="mast-center">
       <h1 class="nameplate">HISTORY OF ROBOT</h1>
-      <div class="nameplate-sub" data-i18n-zh="机器人编年史" data-i18n-en="The Chronicle of Robotics">The Chronicle of Robotics</div>
+      <div class="nameplate-sub" data-i18n-en="Humanoid Edition" data-i18n-zh="人形机器人特刊">Humanoid Edition</div>
     </div>
     <div class="mast-right">
       <div class="mast-controls">
@@ -135,10 +113,9 @@
 
   <div class="shell">
     <main id="main">
-      <!-- COVER -->
       <section class="cover" id="cover">
         <div class="cover-left">
-          <div class="cover-eyebrow" data-i18n-en="COVER · A CHRONICLE OF MACHINES" data-i18n-zh="封面 · 机器之编年史">COVER · A CHRONICLE OF MACHINES</div>
+          <div class="cover-eyebrow" data-i18n-en="COVER · THE WALKING MACHINE" data-i18n-zh="封面 · 走路的机器">COVER · THE WALKING MACHINE</div>
           <h2 class="headline" id="hero-title"></h2>
           <p class="lede" id="hero-lede"></p>
           <div class="stats" id="hero-stats"></div>
@@ -148,26 +125,39 @@
         </div>
       </section>
 
-      <!-- ERA INDEX -->
       <section class="era-index">
         <div class="era-index-head" data-i18n-en="CONTENTS · BY ERA" data-i18n-zh="目录 · 按时代">CONTENTS · BY ERA</div>
         <div class="era-index-grid" id="era-index"></div>
       </section>
 
-      <!-- ERAS rendered here -->
       <div id="eras"></div>
 
-      <!-- DATA -->
-      <section class="section" id="data">
+      <!-- ROSTER -->
+      <section class="section" id="roster">
         <div class="section-head">
           <div>
-            <div class="section-marker" id="data-marker">DATA &middot; INSTALLATIONS &amp; FUNDING</div>
-            <h2 id="data-title">From One Unimate to 550,000 a Year</h2>
+            <div class="section-marker" id="roster-marker">ROSTER &middot; CURRENT MODELS</div>
+            <h2 id="roster-title">Living Humanoids — A Field Guide</h2>
           </div>
-          <p class="section-lead" id="data-lead"></p>
+          <p class="section-lead" id="roster-lead"></p>
         </div>
-        <div class="chart" id="chart-industrial"></div>
-        <div class="chart" id="chart-funding"></div>
+        <div class="roster-scroll">
+          <table class="roster-table" id="roster-table"></table>
+        </div>
+      </section>
+
+      <!-- COMPARE -->
+      <section class="section" id="compare">
+        <div class="section-head">
+          <div>
+            <div class="section-marker" id="compare-marker">COMPARE &middot; SIX COMMERCIAL MODELS</div>
+            <h2 id="compare-title">Six Commercial Humanoids at a Glance</h2>
+          </div>
+          <p class="section-lead" id="compare-lead"></p>
+        </div>
+        <div class="roster-scroll">
+          <table class="compare-table" id="compare-table"></table>
+        </div>
       </section>
 
       <!-- PEOPLE -->
@@ -175,9 +165,8 @@
         <div class="section-head">
           <div>
             <div class="section-marker" id="people-marker">DRAMATIS PERSONAE</div>
-            <h2 id="people-title">The Few Who Pushed Robots Into the Real World</h2>
+            <h2 id="people-title">Builders of the Walking Robot</h2>
           </div>
-          <p class="section-lead" id="people-lead"></p>
         </div>
         <div class="people-grid" id="people-grid"></div>
       </section>
@@ -187,13 +176,10 @@
         <div class="section-head">
           <div>
             <div class="section-marker" id="method-marker">METHODOLOGY</div>
-            <h2 id="method-title">Sources &amp; Editorial Principles</h2>
+            <h2 id="method-title">Sources &amp; Notes</h2>
           </div>
-          <p class="section-lead" id="method-lead"></p>
         </div>
         <div class="body-prose" id="method-body"></div>
-        <h3 style="font-family:var(--f-serif); font-weight:700; font-size:var(--fs-h4); margin:28px 0 8px;" id="method-sources-head">Primary references</h3>
-        <ul class="source-list" id="method-sources"></ul>
       </section>
     </main>
 
@@ -203,10 +189,9 @@
     </footer>
   </div>
 
-  <!-- Command palette dialog -->
   <dialog class="cmd" id="cmd-palette" aria-label="Command palette">
     <div class="cmd-shell">
-      <input class="cmd-input" id="cmd-input" type="search" autocomplete="off" placeholder="Search events, robots, people…" />
+      <input class="cmd-input" id="cmd-input" type="search" autocomplete="off" placeholder="Search robots, eras, people…" />
       <div class="cmd-meta">
         <span id="cmd-count">— RESULTS</span>
         <span>ESC TO CLOSE &middot; ↑↓ NAVIGATE &middot; ⏎ OPEN</span>

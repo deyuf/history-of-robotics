@@ -1,0 +1,745 @@
+{
+  "meta": {
+    "title": "History of Humanoid Robot",
+    "titleEn": "History of Humanoid Robot",
+    "subtitle": "人形机器人简史 · 五十年的双足、双手与一颗大脑",
+    "subtitleEn": "Fifty Years of Two Legs, Two Hands, and One Brain",
+    "lead": "人形机器人是机器人学最古老、也最近又最热的命题。1973 年早稻田 WABOT-1 第一次让机器笨拙地走完几步；1996 年 Honda P2 揭幕，外形相似但运动复杂度跃迁；2013 年 DARPA Robotics Challenge 让全世界看见'摔倒的机器人'；2023 年 ChatGPT 后，一年内 30 家公司宣布自研通用人形。这一页只追踪'用两条腿走路、并有两只手干活'的机器：它们的身高、自由度、控制范式与商业命运。",
+    "leadEn": "The humanoid is robotics' oldest and now most-funded question. In 1973 Waseda's WABOT-1 took the first awkward bipedal steps; in 1996 Honda's P2 leapt the dynamics gap; in 2013 the DARPA Robotics Challenge gave the world the meme of the falling robot; after ChatGPT in 2023, more than thirty companies announced general-purpose humanoid programmes within a single year. This page tracks only the machines that walk on two legs and work with two hands — their heights, DOF, control paradigms and commercial fates.",
+    "issue": "Vol. II",
+    "updated": "2026-05-23",
+    "license": "CC BY 4.0",
+    "sister": { "url": "./index.html", "label_zh": "← 返回主编年史 · 机器人三千年", "label_en": "← Back to main chronicle · 3,000 Years of Robots" }
+  },
+  "ui": {
+    "zh": {
+      "contents": "Contents · 编目",
+      "events": "事件",
+      "robots": "机型",
+      "sources": "引用源",
+      "span": "时间跨度",
+      "spanValue": "1973 – 2026 (~53 年)",
+      "updated": "最后更新",
+      "edition": "EDITION · 2026.05",
+      "license": "LICENSE",
+      "rail_foot": "本页聚焦人形（双足、双臂）机器人；更广义的机器人史见姊妹页《机器人编年史》。",
+      "hero_kicker": "A FOCUSED CHRONICLE · 专题史 · 1973 – 2026",
+      "hero_title": "人形机器人：<em>从一步</em><br/>到一万台",
+      "anatomy_eyebrow": "ANATOMY · 解剖",
+      "anatomy_section": "一台人形机器人是什么",
+      "anatomy_lead": "一台严格意义上的'人形'机器人通常需要满足：双足动态平衡（约 12 自由度）、双臂可操作（约 14 自由度）、双灵巧手（10–22 自由度）、头部带视觉与听觉、躯干结构传力。整机自由度在 30–50 之间，质量 30–80 kg、身高 1.0–1.85 m 是当前主流。下表与下面的事件按此框架展开。",
+      "roster_eyebrow": "ROSTER · 机型档案",
+      "roster_section": "今天在世的人形：当代型号一览",
+      "roster_lead": "下表汇集 2024–2026 年仍处于研发或商用状态的代表性人形机器人。规格以公司公开口径为准；新一代型号迭代很快，引用时请同时查阅原始来源页。",
+      "compare_eyebrow": "COMPARE · 比较",
+      "compare_section": "六款商用人形规格对照",
+      "compare_lead": "纵向：身高、体重、自由度、负载、续航、市场承诺出货时间。横向：六家代表公司的旗舰机型。",
+      "people_eyebrow": "DRAMATIS PERSONAE · 关键人物",
+      "people_section": "把人形从研究做成产品的人",
+      "methods_eyebrow": "METHODOLOGY · 方法",
+      "methods_section": "资料来源与说明",
+      "methods_para_1": "本页所有规格优先引用<strong>厂商官方网站、白皮书、产品发布会视频或同行评议论文</strong>；当不同来源数据冲突时，标注'报告区间'。商业承诺与出货量目标明确标注为'承诺'，与已实际发生的事件分开。",
+      "methods_para_2": "图片来自 Wikimedia Commons、NASA、各公司官方新闻图，文件路径采用 <code>Special:FilePath</code> 重定向。数据 JSON 在 <code>/data/humanoid.json</code>，欢迎在 GitHub PR 增补。",
+      "methods_para_3": "本页与姊妹页《机器人编年史》共享同一套设计 token、字体与样式。",
+      "methods_sources_head": "主要参考",
+      "footer_left": "© 2026 · History of Robot · Humanoid edition ·<br/>内容采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY 4.0</a>。",
+      "footer_right": "← <a href=\"./index.html\">回到主编年史 · Main chronicle</a><br/><a href=\"https://github.com/deyuf/history-of-robot\" target=\"_blank\" rel=\"noopener\">GitHub</a>",
+      "lang_toggle": "EN",
+      "era_eyebrow": "ERA"
+    },
+    "en": {
+      "contents": "Contents",
+      "events": "Events",
+      "robots": "Models",
+      "sources": "Sources",
+      "span": "Span",
+      "spanValue": "1973 – 2026 (~53 years)",
+      "updated": "Updated",
+      "edition": "EDITION · 2026.05",
+      "license": "LICENSE",
+      "rail_foot": "This page focuses on humanoid (bipedal, two-armed) robots; for the broader history see the main chronicle.",
+      "hero_kicker": "A FOCUSED CHRONICLE · 1973 – 2026",
+      "hero_title": "The Humanoid Robot:<br/><em>From One Step</em> to Ten Thousand Units",
+      "anatomy_eyebrow": "ANATOMY",
+      "anatomy_section": "What is a Humanoid Robot, Exactly?",
+      "anatomy_lead": "A strict-sense humanoid robot must combine: dynamic bipedal balance (~12 DOF), two manipulator arms (~14 DOF), two dexterous hands (10–22 DOF), a head with vision and audio, and a load-bearing torso. Total DOF runs 30–50; mass 30–80 kg; height 1.0–1.85 m — that is today's mainstream envelope. The events below sit inside this frame.",
+      "roster_eyebrow": "ROSTER",
+      "roster_section": "Living Humanoids: A Field Guide to Current Models",
+      "roster_lead": "Representative humanoid robots in active development or commercial deployment in 2024–2026. Specs follow each company's public statements; this segment iterates fast, so always cross-check the primary source.",
+      "compare_eyebrow": "COMPARE",
+      "compare_section": "Six Commercial Humanoids at a Glance",
+      "compare_lead": "Rows: height, weight, DOF, payload, runtime, commercial shipment commitment. Columns: six representative companies' flagship models.",
+      "people_eyebrow": "DRAMATIS PERSONAE",
+      "people_section": "Builders of the Walking Robot",
+      "methods_eyebrow": "METHODOLOGY",
+      "methods_section": "Sources & Notes",
+      "methods_para_1": "Specs prioritise <strong>company sites, whitepapers, launch keynote recordings or peer-reviewed papers</strong>; conflicting sources are reported as 'a reported range'. Commercial shipment commitments are explicitly tagged 'commitment' to keep them apart from realised events.",
+      "methods_para_2": "Images come from Wikimedia Commons, NASA and official company releases via stable <code>Special:FilePath</code> redirects. The data lives at <code>/data/humanoid.json</code> — pull requests welcome.",
+      "methods_para_3": "This page shares its design tokens, fonts and styles with the main chronicle.",
+      "methods_sources_head": "Reference",
+      "footer_left": "© 2026 · History of Robot · Humanoid edition ·<br/>Released under <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY 4.0</a>.",
+      "footer_right": "← <a href=\"./index.html\">Back to main chronicle</a><br/><a href=\"https://github.com/deyuf/history-of-robot\" target=\"_blank\" rel=\"noopener\">GitHub</a>",
+      "lang_toggle": "中文",
+      "era_eyebrow": "ERA"
+    }
+  },
+  "eras": [
+    {
+      "id": "era-h1-pioneers",
+      "number": "01",
+      "title": "先驱与第一台双足",
+      "titleEn": "Pioneers & the First Bipeds",
+      "range": "1968 – 1985",
+      "rangeEn": "1968 – 1985",
+      "lead": "1968 年早稻田大学加藤一郎设立 '人形机器人' 实验室，开始系统地把'走'与'抓'当作工程问题。1973 年的 WABOT-1 是第一台完整意义上的人形机器人：能走、能抓、能用人造语音回答简单问题。十年后的 WABOT-2 已经能弹奏管风琴。同时期苏联的 RAM 系列和南斯拉夫的 Vukobratović 提出 ZMP（零力矩点）准则，奠定了此后 40 年双足控制理论。",
+      "leadEn": "In 1968 Ichiro Kato founded the 'humanoid' robotics lab at Waseda, methodically turning walking and grasping into engineering. WABOT-1 (1973) was the first full-sense humanoid: it walked, grasped and answered simple questions in synthesised speech. By WABOT-2 (1984), it played the organ. Meanwhile Yugoslavia's Miomir Vukobratović proposed the Zero Moment Point (ZMP) criterion, which would underpin biped control for forty years.",
+      "events": [
+        {
+          "year": "1968",
+          "title": "Vukobratović 提出 ZMP",
+          "titleEn": "Vukobratović Proposes the ZMP",
+          "desc": "南斯拉夫 Mihailo Pupin Institute 的 Miomir Vukobratović 提出'零力矩点'判据：若 ZMP 落在支撑面内，则双足姿态可保持平衡。这一概念主导了此后 40 年的双足行走控制。",
+          "descEn": "Miomir Vukobratović of Yugoslavia's Mihailo Pupin Institute formulated the Zero Moment Point criterion: if the ZMP lies inside the support polygon, the biped is balanced. The concept dominated bipedal locomotion control for the next forty years.",
+          "sources": [
+            { "label": "Vukobratović · 'Zero-Moment Point' (IJHR, 2004 retrospective)", "url": "https://www.worldscientific.com/doi/10.1142/S0219843604000083" },
+            { "label": "Wikipedia · Zero Moment Point", "url": "https://en.wikipedia.org/wiki/Zero_moment_point" }
+          ]
+        },
+        {
+          "year": "1969",
+          "title": "Kato Lab 启动",
+          "titleEn": "Kato Lab Begins",
+          "desc": "早稻田大学加藤一郎教授在理工学院成立机器人实验室，目标明确：制造能与人共存、人类外形的机器。其学生井上博允等后又在东大、JAXA 续推日本机器人学。",
+          "descEn": "Ichiro Kato founded the Waseda robotics lab with an explicit aim: build a machine that shared humans' form and shared their world. His students Inoue Hirochika and others would later carry Japan's robotics forward at the University of Tokyo and JAXA.",
+          "sources": [
+            { "label": "Waseda · Humanoid Robotics history", "url": "https://www.humanoid.waseda.ac.jp/booklet/kato_2.html" }
+          ]
+        },
+        {
+          "year": "1973",
+          "title": "WABOT-1：第一台真人形机器人",
+          "titleEn": "WABOT-1 — The First Real Humanoid",
+          "desc": "Kato Lab 发布 WABOT-1，全身 11 自由度，能用人造嘴唇说话、用触觉传感器抓物、缓慢双足走 45 秒一步。它被普遍视为世界第一台真正意义上的人形机器人。",
+          "descEn": "Kato's group unveiled WABOT-1: eleven DOF, an artificial mouth that spoke, tactile-sensored gripper hands, and a glacial 45-second bipedal step. It is widely cited as the world's first true humanoid robot.",
+          "image": { "file": "TeaAutomatAndMechanism.jpg", "credit": "Edo karakuri (Japan's older humanoid tradition that inspired Waseda)", "alt": "Karakuri precursor" },
+          "sources": [
+            { "label": "Waseda · WABOT-1 booklet", "url": "https://www.humanoid.waseda.ac.jp/booklet/kato_2.html" },
+            { "label": "IEEE Spectrum · history of humanoids", "url": "https://spectrum.ieee.org/honda-asimo-history" }
+          ]
+        },
+        {
+          "year": "1980",
+          "title": "WHL-11 与 WL-9DR",
+          "titleEn": "WHL-11 and WL-9DR",
+          "desc": "Kato 团队的 WL-9DR（1980）实现首次准动态双足行走；1985 年 WHL-11 进一步在筑波科技博览会公开演示，使日本成为双足行走研究的全球中心。",
+          "descEn": "Kato's WL-9DR (1980) achieved the first quasi-dynamic biped walking; WHL-11 (1985) was demonstrated at Tsukuba Expo, cementing Japan as the global centre of biped locomotion research.",
+          "sources": [
+            { "label": "Waseda · WL/WHL series", "url": "https://www.humanoid.waseda.ac.jp/booklet/kato_4.html" }
+          ]
+        },
+        {
+          "year": "1984",
+          "title": "WABOT-2：管风琴师",
+          "titleEn": "WABOT-2 — The Organ Player",
+          "desc": "Kato Lab 发布 WABOT-2，可以读谱、按琴键、踩踏板演奏中等难度的管风琴曲。它把'人形机器人'命题从能走能抓推到了多模态艺术任务。",
+          "descEn": "Kato's WABOT-2 read a score, fingered keys and worked organ pedals to play moderately complex pieces — pushing the humanoid question from walking-and-grasping to multimodal artistry.",
+          "sources": [
+            { "label": "Waseda · WABOT-2", "url": "https://www.humanoid.waseda.ac.jp/booklet/kato_3.html" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "era-h2-honda-secret",
+      "number": "02",
+      "title": "Honda 的秘密十年与 P 系列",
+      "titleEn": "Honda's Secret Decade & the P-Series",
+      "range": "1986 – 2000",
+      "rangeEn": "1986 – 2000",
+      "lead": "1986 年，本田技研工业悄悄启动一个代号 E 的项目，目标是'让机器走得像人'。它在 11 年的保密之后，于 1996 年 12 月 20 日把 P2 推到东京新闻发布会上：182 cm、210 kg、能独立行走、转身、推车、上下楼梯。这是日本工业史上少见的'技术突袭'——所有竞争对手都没准备。",
+      "leadEn": "In 1986 Honda Motor quietly began a program code-named 'E' with a single brief: walk like a human. Eleven years of secrecy later, on 20 December 1996 it dropped P2 onto a Tokyo press stage — 182 cm, 210 kg, walking unaided, turning, pushing carts, climbing stairs. Rare in Japan's industrial history: a complete technology surprise.",
+      "events": [
+        {
+          "year": "1986–1993",
+          "title": "Honda E0 – E6",
+          "titleEn": "Honda E0 – E6",
+          "desc": "本田从单纯的静态双足（E0, 1986）做到准动态行走（E2, 1989）、再到自适应陡坡（E6, 1993）。整个 E 系列对外保密，只有少数承包商知道存在。",
+          "descEn": "Honda progressed from static walking (E0, 1986) through quasi-dynamic walking (E2, 1989) to adaptive stair-and-slope walking (E6, 1993). The E-series was closely held; only a handful of suppliers knew it existed.",
+          "sources": [
+            { "label": "Honda · ASIMO history (E-Series)", "url": "https://global.honda/en/innovation/robotics/ASIMO/history.html" }
+          ]
+        },
+        {
+          "year": "1993–1997",
+          "title": "P1：第一具'人形'的 Honda",
+          "titleEn": "P1 — Honda's First Truly Humanoid Form",
+          "desc": "P1（1993）首次给 E 系列加上完整的人形上身：双臂可操作工具、躯干承重、头部含视觉。但 P1 仍然庞大（1.92 m、175 kg），且依靠外部电缆。",
+          "descEn": "P1 (1993) gave the E-series a full humanoid upper body for the first time: arms that could use tools, a load-bearing torso, a head with vision. P1 remained enormous (1.92 m, 175 kg) and tethered to external power.",
+          "sources": [
+            { "label": "Honda · P-Series", "url": "https://global.honda/en/innovation/robotics/ASIMO/history.html" }
+          ]
+        },
+        {
+          "year": "1996",
+          "title": "P2：自含电源的双足机器人",
+          "titleEn": "P2 — The Self-Contained Walking Robot",
+          "desc": "12 月 20 日东京发布会。P2 高 1.82 m、重 210 kg、共 30 自由度、内置电池与计算机，可自主上下楼梯、推车、转身——首次把'人形机器人'从实验室带进新闻发布会。",
+          "descEn": "20 December 1996, Tokyo. P2: 1.82 m, 210 kg, 30 DOF, on-board battery and computer; it climbed stairs, pushed carts and turned unassisted. The press-conference moment that yanked humanoids from the lab into the news cycle.",
+          "sources": [
+            { "label": "Honda · P2", "url": "https://global.honda/en/innovation/robotics/ASIMO/history.html" },
+            { "label": "IEEE Spectrum · 25 years of Honda humanoids", "url": "https://spectrum.ieee.org/honda-asimo-history" }
+          ]
+        },
+        {
+          "year": "1997",
+          "title": "P3：130 kg 的减肥",
+          "titleEn": "P3 — Down to 130 kg",
+          "desc": "P3 把 P2 从 210 kg 削到 130 kg、身高 1.60 m。这次工程上的'减肥'使在普通日本住宅里运行成为可能，也奠定了 ASIMO 的体型。",
+          "descEn": "P3 cut P2 from 210 kg to 130 kg and shrank to 1.60 m. The diet made operation in an average Japanese house imaginable and fixed the body proportions of the future ASIMO.",
+          "sources": [
+            { "label": "Honda · P3", "url": "https://global.honda/en/innovation/robotics/ASIMO/history.html" }
+          ]
+        },
+        {
+          "year": "2000",
+          "title": "ASIMO 揭幕",
+          "titleEn": "ASIMO Unveiled",
+          "desc": "Advanced Step in Innovative Mobility，1.30 m、52 kg、26 自由度，能小跑、踢球、识别人脸。它把'人形机器人'写进了 21 世纪 00 年代的公众想象。Honda 在此后 18 年共迭代 7 个版本。",
+          "descEn": "Advanced Step in Innovative Mobility — 1.30 m, 52 kg, 26 DOF, jogging, kicking a ball, recognising faces. ASIMO fixed the humanoid in the public imagination of the 2000s; Honda iterated it across seven versions over 18 years.",
+          "image": { "file": "Honda_ASIMO_(ver._2011)_2011_Tokyo_Motor_Show.jpg", "credit": "ASIMO (2011 version) at Tokyo Motor Show, photo by Morio", "alt": "Honda ASIMO humanoid" },
+          "sources": [
+            { "label": "Honda · ASIMO", "url": "https://global.honda/en/innovation/robotics/ASIMO/" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "era-h3-platforms",
+      "number": "03",
+      "title": "百花齐放：研究平台的十年",
+      "titleEn": "A Hundred Platforms Bloom: The Research Decade",
+      "range": "2000 – 2012",
+      "rangeEn": "2000 – 2012",
+      "lead": "ASIMO 一炮打响后，韩国 KAIST 的 HUBO、日本 AIST 的 HRP 系列、Sony QRIO、Aldebaran NAO 与法德合作的 iCub 在十年内涌现。这是人形机器人最像'科学家玩具'的时代：每所顶级大学都有自己的平台，每年的 Humanoids 会议是行业唯一名片。商业化几乎为零，但控制理论、感知与机器人语言飞速发展。",
+      "leadEn": "After ASIMO the field exploded with research platforms: KAIST's HUBO, AIST's HRP series in Japan, Sony's QRIO, Aldebaran's NAO and the Franco-German iCub. This was the era of the humanoid-as-scientist's-toy: every major lab had its own platform, the IEEE Humanoids conference was the industry's only address. Commercial revenue was effectively zero — but control theory, perception and robot programming made enormous strides.",
+      "events": [
+        {
+          "year": "2002",
+          "title": "AIST HRP-2",
+          "titleEn": "AIST HRP-2",
+          "desc": "日本产业技术综合研究所与 Kawada Industries 推出 HRP-2 'Promet'：154 cm、58 kg、30 自由度，是当时最先进的可商用研究平台，国内外学界采购约 30 台。",
+          "descEn": "Japan's AIST, with Kawada Industries, released HRP-2 'Promet' — 154 cm, 58 kg, 30 DOF. The most advanced commercially-available research platform at the time; roughly 30 units were sold to labs worldwide.",
+          "sources": [
+            { "label": "AIST · HRP-2 paper", "url": "https://staff.aist.go.jp/k.kaneko/publications/2004_iros_hrp2.pdf" }
+          ]
+        },
+        {
+          "year": "2003",
+          "title": "Sony QRIO",
+          "titleEn": "Sony QRIO",
+          "desc": "Sony 在 AIBO 之后的小型人形：58 cm、6.5 kg、38 自由度，可识别人脸、跳舞、慢跑。2006 年项目随 Sony 重组终止——是第一个被'公司战略改变'砍掉的人形项目。",
+          "descEn": "Sony's small humanoid after AIBO: 58 cm, 6.5 kg, 38 DOF, recognising faces, dancing, jogging. The project was discontinued in 2006 with Sony's restructuring — the first humanoid to be killed by corporate strategy rather than technology.",
+          "sources": [
+            { "label": "Sony · QRIO history", "url": "https://www.sony.com/en/SonyInfo/CorporateInfo/History/sonyhistory-l.html" },
+            { "label": "IEEE Spectrum · QRIO retrospective", "url": "https://spectrum.ieee.org/sony-rolly-and-qrio-retrospective" }
+          ]
+        },
+        {
+          "year": "2004",
+          "title": "KAIST HUBO",
+          "titleEn": "KAIST HUBO",
+          "desc": "韩国科学技术院 Jun Ho Oh 团队发布 HUBO（KHR-3），125 cm、55 kg、41 自由度，特点是把成本压到 ASIMO 的几分之一。HUBO 2 (2009) 起被多所美国大学采购。",
+          "descEn": "KAIST's Jun Ho Oh group released HUBO (KHR-3): 125 cm, 55 kg, 41 DOF — built at a fraction of ASIMO's cost. From HUBO 2 (2009) onward several US labs purchased units.",
+          "sources": [
+            { "label": "KAIST · HUBO Lab", "url": "http://hubolab.kaist.ac.kr/" }
+          ]
+        },
+        {
+          "year": "2008",
+          "title": "Aldebaran NAO",
+          "titleEn": "Aldebaran NAO",
+          "desc": "法国 Aldebaran Robotics（后被软银收购）发布 58 cm 的小型双足 NAO，售价约 8,000 欧元，主要客户为高校与研究机构。NAO 至今仍是机器人足球 RoboCup Standard Platform 的官方机型，全球销量超 13,000 台。",
+          "descEn": "French Aldebaran Robotics (later acquired by SoftBank) launched the 58 cm bipedal NAO at around €8,000, aimed at universities and labs. NAO remains the official platform of RoboCup's Standard League and has sold over 13,000 units globally.",
+          "sources": [
+            { "label": "Aldebaran · NAO", "url": "https://www.aldebaran.com/en/nao" }
+          ]
+        },
+        {
+          "year": "2009",
+          "title": "AIST HRP-4C 美璃 Miim",
+          "titleEn": "AIST HRP-4C 'Miim'",
+          "desc": "AIST 与 Kokoro 合作的女性外形人形 HRP-4C：158 cm、43 kg、42 自由度，主要面向时装、娱乐展览。它把'外貌仿真'与'运动控制'并入同一个产品。",
+          "descEn": "AIST's collaboration with Kokoro produced HRP-4C 'Miim', a female-form humanoid — 158 cm, 43 kg, 42 DOF, aimed at fashion and exhibition stages. The first project to seriously combine human-likeness with locomotion.",
+          "sources": [
+            { "label": "AIST · HRP-4C", "url": "https://www.aist.go.jp/aist_e/list/latest_research/2009/20090325/20090325.html" }
+          ]
+        },
+        {
+          "year": "2010",
+          "title": "iCub 开源",
+          "titleEn": "iCub Goes Open Source",
+          "desc": "意大利 IIT 主持的儿童尺寸 iCub（104 cm、22 kg、53 自由度）以 LGPL 开源完整设计与软件，使任何研究组可以自行加工、修改与发表。iCub 成为认知与发展机器人学的标准平台。",
+          "descEn": "Italy's IIT released the child-sized iCub (104 cm, 22 kg, 53 DOF) under LGPL — full hardware and software open-sourced. Any group could fabricate, modify and publish; iCub became the standard platform of cognitive developmental robotics.",
+          "sources": [
+            { "label": "iCub project", "url": "https://icub.iit.it/" }
+          ]
+        },
+        {
+          "year": "2012",
+          "title": "DRC 公告：Atlas 出场",
+          "titleEn": "DRC Announced — Atlas Enters",
+          "desc": "DARPA 宣布 Robotics Challenge，面向福岛核灾难类场景。Boston Dynamics 接 DARPA 合同，把腿足动力学经验从 BigDog 转向人形 Atlas——史上第一台动态液压人形。",
+          "descEn": "DARPA announced the Robotics Challenge, targeting Fukushima-style disaster scenarios. Boston Dynamics took the DARPA contract, pivoting its BigDog legged-dynamics know-how into a humanoid — Atlas, the first dynamic hydraulic humanoid.",
+          "sources": [
+            { "label": "DARPA · Robotics Challenge", "url": "https://www.darpa.mil/about-us/timeline/darpa-robotics-challenge" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "era-h4-drc",
+      "number": "04",
+      "title": "DRC 熔炉：摔倒视频与 Atlas",
+      "titleEn": "The DRC Crucible: Falls, Atlas, and the Public",
+      "range": "2013 – 2017",
+      "rangeEn": "2013 – 2017",
+      "lead": "2013–2015 年的 DARPA Robotics Challenge 是人形机器人史上动用资源最庞大的公开赛事。23 支队伍、十余款不同人形（Atlas、HUBO、CHIMP、Schaft、Walk-Man），在三天比赛中开车、开门、用电钻、爬梯子——并在直播中接连倒地。'摔倒的机器人'是这场比赛留给公众最深的图像，但比赛本身把双足动态、感知与远程操作的工程水平推上了新高。",
+      "leadEn": "The 2013–2015 DARPA Robotics Challenge was the largest publicly-funded humanoid contest in history: twenty-three teams, ten-plus different machines (Atlas, HUBO, CHIMP, Schaft, Walk-Man), driving cars, opening doors, drilling holes and climbing ladders — and tumbling on live television. 'Falling robot' was the meme; but the contest itself pushed biped dynamics, perception and teleoperation onto a new plateau.",
+      "events": [
+        {
+          "year": "2013-07",
+          "title": "Boston Dynamics Atlas 首版",
+          "titleEn": "Boston Dynamics Atlas (DRC version)",
+          "desc": "DARPA 资助、Boston Dynamics 制造的 Atlas v1：1.88 m、150 kg、28 液压关节，发往 7 支软件队伍。它的动力来自身上挂着的液压泵，电源来自外部缆绳——是个动态怪兽，但仍系着绳子。",
+          "descEn": "DARPA-funded, Boston Dynamics-built. Atlas v1: 1.88 m, 150 kg, 28 hydraulic actuators, shipped to seven software teams. Power came from an on-board hydraulic pump fed by an off-board tether — a dynamic monster, but still leashed.",
+          "sources": [
+            { "label": "DARPA · Atlas reveal", "url": "https://www.darpa.mil/about-us/timeline/darpa-robotics-challenge" },
+            { "label": "Boston Dynamics · Atlas history", "url": "https://bostondynamics.com/blog/electric-new-era-for-atlas/" }
+          ]
+        },
+        {
+          "year": "2013-12",
+          "title": "Google 买下 Schaft 与 Boston Dynamics",
+          "titleEn": "Google Buys Schaft and Boston Dynamics",
+          "desc": "Google Andy Rubin 主导'Replicant'项目，在 DRC 半决赛前后收购 Schaft（DRC 头名）与 Boston Dynamics。直接结果：两支强队从 DRC 决赛退出，DRC 决赛被业界戏称为'没有最强阵容'。",
+          "descEn": "Andy Rubin's Google 'Replicant' programme acquired Schaft (the DRC trials winner) and Boston Dynamics. Both teams duly withdrew from the DRC finals — held thereafter without the field's strongest entrants.",
+          "sources": [
+            { "label": "NYT · Google acquires Boston Dynamics", "url": "https://www.nytimes.com/2013/12/14/technology/google-adds-to-its-menagerie-of-robots.html" }
+          ]
+        },
+        {
+          "year": "2015-06",
+          "title": "DRC 决赛：DRC-HUBO 夺冠",
+          "titleEn": "DRC Finals — DRC-HUBO Wins",
+          "desc": "KAIST 团队的 DRC-HUBO 以 44:28 完成全部八项任务夺冠。Atlas（IHMC 与 MIT 队）位列 2、6 名。比赛持续两天，公众记忆里 IIT Walk-Man、CHIMP 的摔倒视频比冠军本身传播得更广。",
+          "descEn": "KAIST's DRC-HUBO completed all eight tasks in 44 minutes 28 seconds to win. Atlas (IHMC, MIT) placed second and sixth. The two-day finals went into public memory mostly through compilation videos of IIT's Walk-Man and CHIMP's falls.",
+          "sources": [
+            { "label": "DARPA · DRC results", "url": "https://www.darpa.mil/news-events/2015-06-06" },
+            { "label": "IEEE Spectrum · DRC final results", "url": "https://spectrum.ieee.org/results-of-the-darpa-robotics-challenge-finals" }
+          ]
+        },
+        {
+          "year": "2016-02",
+          "title": "Atlas 第二代：去掉绳子",
+          "titleEn": "Atlas Gen 2 — Off the Leash",
+          "desc": "Boston Dynamics 在 YouTube 发布无缆 Atlas 雪地行走视频：1.75 m、82 kg，内置液压泵与电池，可在森林雪地里被人推倒、自己爬起。视频两天内点击 1,000 万。",
+          "descEn": "Boston Dynamics posted a video of an untethered Atlas walking through snow: 1.75 m, 82 kg, on-board hydraulic pump and battery, shoved in a forest and getting back up. Ten million views in 48 hours.",
+          "sources": [
+            { "label": "Boston Dynamics YouTube · New Atlas", "url": "https://www.youtube.com/watch?v=rVlhMGQgDkY" }
+          ]
+        },
+        {
+          "year": "2017-11",
+          "title": "Atlas Backflip",
+          "titleEn": "Atlas Backflip",
+          "desc": "Atlas 完成后空翻。视频 24 小时内 1,500 万次播放。从'摔倒的机器人'到'像体操运动员一样的机器人'，公众对人形机器人的能力上限被重新定义。",
+          "descEn": "Atlas pulled off a backflip. The video drew 15 million views in 24 hours. The public's ceiling for what humanoids could do shifted from 'falling robot' to 'gymnast'.",
+          "sources": [
+            { "label": "Boston Dynamics YouTube · Atlas backflip", "url": "https://www.youtube.com/watch?v=fRj34o4hN4I" }
+          ]
+        },
+        {
+          "year": "2014",
+          "title": "Pepper：第一个真正卖给消费者的人形",
+          "titleEn": "Pepper — The First Humanoid Sold to Consumers",
+          "desc": "Aldebaran/软银发布 1.2 m 高的轮式上半身人形 Pepper（不是双足）。日本零售点首日 1,000 台一分钟售罄；累计部署超 27,000 台，是首个进入商场、银行的人形。2021 年生产终止。",
+          "descEn": "Aldebaran / SoftBank released the 1.2 m, wheeled-base upper-body humanoid Pepper (not a biped). 1,000 Japan retail units sold out in a minute; 27,000+ units cumulatively deployed in shops and banks. Production ended in 2021.",
+          "sources": [
+            { "label": "SoftBank · Pepper announcement", "url": "https://group.softbank/en/news/press/20140605_0" },
+            { "label": "Reuters · SoftBank halts Pepper", "url": "https://www.reuters.com/article/us-softbank-group-robot-idUSKBN2DT0SE" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "era-h5-commercial",
+      "number": "05",
+      "title": "走向商用：Cassie、Digit 与 ASIMO 谢幕",
+      "titleEn": "Toward Commerce: Cassie, Digit, and ASIMO's Goodbye",
+      "range": "2017 – 2022",
+      "rangeEn": "2017 – 2022",
+      "lead": "DRC 落幕后人形机器人陷入'谁来买单'的现实。Honda 在 2018 年宣布 ASIMO 项目终止；Pepper 同年开始减产。但腿足机器人借助强化学习与轻量化，悄悄找到了第一份工作：Agility Robotics 的 Cassie 与 Digit 进入物流仓库；Boston Dynamics 把研究 Atlas 与商用 Spot 分作两条路线。",
+      "leadEn": "After the DRC the field collided with the question of who will pay. Honda discontinued ASIMO in 2018; Pepper began winding down the same year. But legged robots, enabled by RL and lighter actuators, quietly found their first job: Agility Robotics' Cassie and Digit moved into logistics warehouses; Boston Dynamics split research Atlas from commercial Spot.",
+      "events": [
+        {
+          "year": "2017",
+          "title": "Agility Cassie",
+          "titleEn": "Agility Robotics' Cassie",
+          "desc": "Oregon State University 与 Jonathan Hurst 衍生公司 Agility Robotics 发布 Cassie——只有腿（无上身）的双足，主要研究高动态行走。Cassie 后来跑完了 5 公里 53 分钟（2021 OSU 实验）。",
+          "descEn": "Oregon State spin-off Agility Robotics released Cassie — legs only, no upper body — for high-dynamic walking research. A Cassie completed 5 km in 53 minutes in a 2021 OSU experiment, a record for an untethered bipedal robot.",
+          "sources": [
+            { "label": "Agility Robotics · Cassie", "url": "https://agilityrobotics.com/" },
+            { "label": "OSU · Cassie 5K run", "url": "https://today.oregonstate.edu/news/cassie-bipedal-robot-runs-5k" }
+          ]
+        },
+        {
+          "year": "2018",
+          "title": "ASIMO 项目终止",
+          "titleEn": "Honda Discontinues ASIMO",
+          "desc": "Honda 6 月宣布把 ASIMO 团队解散，技术转向 Honda Robotics 的医疗复健与多足机器人。原因被业界解读为：单台 ASIMO 成本 250 万美元、且没有清晰商业化路径。",
+          "descEn": "Honda announced in June that the ASIMO team would be disbanded and the technology repurposed for medical rehabilitation and multi-legged platforms. The industry's reading: ASIMO cost an estimated $2.5M per unit and had no clear commercial path.",
+          "sources": [
+            { "label": "Reuters · Honda retires ASIMO", "url": "https://www.reuters.com/article/us-honda-asimo-idUSKBN1JS0WB" }
+          ]
+        },
+        {
+          "year": "2019",
+          "title": "Agility Digit",
+          "titleEn": "Agility Robotics' Digit",
+          "desc": "Cassie 的'上身版'：Digit 1.55 m、约 45 kg、机械鸟形腿（鸵鸟膝盖反折），双臂可搬箱，专为仓储设计。Ford 是首个客户。",
+          "descEn": "Cassie with an upper body. Digit: 1.55 m, ~45 kg, ostrich-style reverse knees, two arms for carrying boxes — engineered for warehouses. Ford was the first customer.",
+          "sources": [
+            { "label": "Agility · Digit", "url": "https://agilityrobotics.com/robots/digit" },
+            { "label": "Reuters · Ford and Digit", "url": "https://www.reuters.com/technology/agility-robotics-build-mass-production-humanoid-robot-factory-2023-09-21/" }
+          ]
+        },
+        {
+          "year": "2021-08",
+          "title": "Tesla Bot / Optimus 概念",
+          "titleEn": "Tesla Bot / Optimus Announced",
+          "desc": "Tesla AI Day 上 Elon Musk 宣布造一台 1.73 m、56 kg 的家用人形。当晚一名穿紧身衣的演员上台跳舞 Robot dance——这场表演成为'通用人形'热潮的引爆点，也成为日后被反复嘲笑的桥段。",
+          "descEn": "At AI Day Elon Musk announced a 1.73 m, 56 kg domestic humanoid. The reveal — a costumed dancer doing the robot — became both the spark for the general-purpose humanoid boom and one of the most-mocked moments in the field.",
+          "sources": [
+            { "label": "The Verge · Tesla announces Optimus", "url": "https://www.theverge.com/2021/8/20/22633799/tesla-bot-elon-musk-humanoid-robot-ai-day" }
+          ]
+        },
+        {
+          "year": "2022-04",
+          "title": "Sanctuary AI 成立",
+          "titleEn": "Sanctuary AI Incorporated",
+          "desc": "加拿大温哥华，Geordie Rose（D-Wave 创始人）与 Suzanne Gildert 创立 Sanctuary AI，目标是'通用智能 + 灵巧手'。Phoenix Gen 1 在 2023 年发布。",
+          "descEn": "In Vancouver, D-Wave co-founder Geordie Rose and Suzanne Gildert founded Sanctuary AI with a brief of 'general intelligence and dexterous hands'. Phoenix Gen 1 followed in 2023.",
+          "sources": [
+            { "label": "Sanctuary AI · about", "url": "https://www.sanctuary.ai/about" }
+          ]
+        },
+        {
+          "year": "2022-09",
+          "title": "Optimus 'Bumblebee' 走台",
+          "titleEn": "Optimus 'Bumblebee' Walks",
+          "desc": "Tesla AI Day 2022 现场首次走出的 Optimus 原型缓慢挥手，与去年扮装演员形成对比。当晚第二代量产意图机型也被推出。",
+          "descEn": "AI Day 2022 — Optimus 'Bumblebee' walked across the stage and waved, a deliberate rebuke to last year's costumed dancer. A second, more production-oriented prototype was shown on the same evening.",
+          "sources": [
+            { "label": "Reuters · Tesla unveils Optimus prototype", "url": "https://www.reuters.com/technology/tesla-show-off-optimus-robot-prototype-musk-2022-09-30/" }
+          ]
+        },
+        {
+          "year": "2022",
+          "title": "Apptronik Apollo 公布概念",
+          "titleEn": "Apptronik's Apollo Concept",
+          "desc": "得州大学奥斯汀分校 Human Centered Robotics Lab 衍生公司 Apptronik，自 2016 年开始为 NASA 做 Valkyrie 部件，2022 年公开 Apollo——目标 1.73 m、72 kg、25 kg 负载、可换电池。",
+          "descEn": "Apptronik (a UT Austin Human-Centered Robotics Lab spin-off, since 2016 a supplier to NASA's Valkyrie) unveiled Apollo: 1.73 m, 72 kg, 25 kg payload, hot-swappable battery.",
+          "sources": [
+            { "label": "Apptronik · Apollo", "url": "https://apptronik.com/apollo" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "era-h6-embodied",
+      "number": "06",
+      "title": "LLM 元年与人形闪电战",
+      "titleEn": "The LLM Year & the Humanoid Blitz",
+      "range": "2023 – 2026",
+      "rangeEn": "2023 – 2026",
+      "lead": "ChatGPT 之后，资本和工程师在 2023 年同时押注：把大模型装进人形机器人。Figure 在 2 月成立、10 月发布原型；1X 在 3 月获 OpenAI 投资；NVIDIA 在 GTC 24 把 GR00T 推出为通用基础模型；Physical Intelligence 用 π0 把跨身体的视觉-语言-动作模型规模化。同时中国宇树、智元、银河通用、傅利叶、宇树成为人形机器人的新增长极，把整机价格从 200 万美元压向 10 万美元区间。",
+      "leadEn": "After ChatGPT, capital and engineers placed the same bet in 2023: put a large model inside a humanoid. Figure incorporated in February and showed a prototype in October; 1X took OpenAI money in March; NVIDIA's GR00T arrived as a foundation model at GTC 24; Physical Intelligence scaled the cross-embodiment vision-language-action model with π0. Meanwhile Unitree, AgiBot, Galbot and Fourier became China's growth engines, compressing the all-in cost of a humanoid from $2M toward $100K.",
+      "events": [
+        {
+          "year": "2023-03",
+          "title": "Figure AI 成立",
+          "titleEn": "Figure AI Incorporated",
+          "desc": "前 Vettery / Archer Aviation 创始人 Brett Adcock 创立 Figure AI。3 月获 7,000 万美元种子，10 月公布 Figure 01——1.68 m、60 kg、可载 20 kg。",
+          "descEn": "Brett Adcock (previously Vettery and Archer Aviation) founded Figure AI. A $70M seed in March, Figure 01 unveiled in October — 1.68 m, 60 kg, 20 kg payload.",
+          "sources": [
+            { "label": "Figure · about", "url": "https://www.figure.ai/about-us" }
+          ]
+        },
+        {
+          "year": "2023-03",
+          "title": "1X 完成 A2 轮，得到 OpenAI 投资",
+          "titleEn": "1X Closes Series A2 with OpenAI Investment",
+          "desc": "挪威/美国 1X Technologies（原 Halodi Robotics）完成 2,400 万美元 A2 轮，由 OpenAI Startup Fund 与 Tiger Global 领投，主推家用双足 NEO。",
+          "descEn": "Norwegian/American 1X Technologies (formerly Halodi Robotics) closed a $24M Series A2 led by the OpenAI Startup Fund and Tiger Global. Focus: the home biped NEO.",
+          "sources": [
+            { "label": "1X · Series A2", "url": "https://www.1x.tech/discover/openai-startup-fund-tiger-global" }
+          ]
+        },
+        {
+          "year": "2023-08",
+          "title": "Unitree H1：首款国产高动态双足",
+          "titleEn": "Unitree H1 — China's First High-Dynamic Biped",
+          "desc": "杭州宇树发布 H1：1.80 m、47 kg、19 自由度，膝输出 360 N·m、可奔跑 1.5 m/s。定价 9 万美元——比同级西方产品低一个数量级。",
+          "descEn": "Hangzhou Unitree released H1: 1.80 m, 47 kg, 19 DOF, 360 N·m knee torque, 1.5 m/s running. List price $90K — an order of magnitude below comparable Western platforms.",
+          "image": { "file": "Optimus_bot_at_Tesla_showroom_-_20251118_-_01.jpg", "credit": "Tesla Optimus (placeholder image — Unitree H1 photo not yet on Wikimedia)", "alt": "Humanoid robot" },
+          "sources": [
+            { "label": "Unitree · H1", "url": "https://www.unitree.com/h1" },
+            { "label": "IEEE Spectrum · Unitree H1", "url": "https://spectrum.ieee.org/unitree-h1-humanoid" }
+          ]
+        },
+        {
+          "year": "2023-08",
+          "title": "Sanctuary Phoenix Gen 6",
+          "titleEn": "Sanctuary Phoenix Gen 6",
+          "desc": "1.70 m、70 kg、20 自由度灵巧手（液压拇指相对机构），主打通用人工智能 'Carbon' 框架。同年宣布与马自达签订北美工厂试点。",
+          "descEn": "1.70 m, 70 kg, dexterous 20-DOF hand with a hydraulic opposable thumb; bundled with the 'Carbon' AGI-style cognitive layer. A North American pilot with Magna for Mazda followed.",
+          "sources": [
+            { "label": "Sanctuary AI · Phoenix Gen 6", "url": "https://www.sanctuary.ai/blog/sanctuary-ai-unveils-phoenix" }
+          ]
+        },
+        {
+          "year": "2023-10",
+          "title": "Fourier GR-1",
+          "titleEn": "Fourier Intelligence GR-1",
+          "desc": "上海傅利叶智能发布 GR-1：1.65 m、55 kg、40 自由度，承诺量产价 10 万美元以下。它是中国第一款进入预订的通用人形机器人。",
+          "descEn": "Shanghai's Fourier Intelligence unveiled GR-1: 1.65 m, 55 kg, 40 DOF, with a promised production price under $100K. The first Chinese general-purpose humanoid put up for pre-order.",
+          "sources": [
+            { "label": "Fourier · GR-1", "url": "https://www.fftai.com/products-gr1" }
+          ]
+        },
+        {
+          "year": "2023-12",
+          "title": "Tesla Optimus Gen 2",
+          "titleEn": "Tesla Optimus Gen 2",
+          "desc": "Tesla 12 月发布 Optimus Gen 2：1.73–1.80 m、55–57 kg、28 自由度躯体 + 11 自由度手，行走 5 km/h，2.3 kWh 电池，可载 20 kg。视频中展示握鸡蛋与瑜伽平衡。",
+          "descEn": "Tesla released Optimus Gen 2 in December: 1.73–1.80 m, 55–57 kg, 28-DOF body and 11-DOF hands, walking at 5 km/h, 2.3 kWh battery, 20 kg payload. Demos: holding an egg, holding a yoga pose.",
+          "image": { "file": "Optimus_bot_at_Tesla_showroom_-_20251118_-_01.jpg", "credit": "Tesla Optimus at Tesla showroom, 2025", "alt": "Tesla Optimus humanoid" },
+          "sources": [
+            { "label": "Tesla · Optimus", "url": "https://www.tesla.com/Optimus" },
+            { "label": "Bloomberg · Optimus Gen 2 details", "url": "https://www.bloomberg.com/news/articles/2023-12-13/tesla-optimus-gen-2-humanoid-robot-video" }
+          ]
+        },
+        {
+          "year": "2023-12",
+          "title": "Boston Dynamics 退役液压 Atlas",
+          "titleEn": "Boston Dynamics Retires Hydraulic Atlas",
+          "desc": "11 年的液压 Atlas 谢幕；次日发布全电驱 'New Atlas'。新机更安静、更轻、关节运动范围超越人类（膝、肘可 360° 旋转），首要客户是 Hyundai 的工厂。",
+          "descEn": "After eleven years, the hydraulic Atlas retired; the all-electric 'New Atlas' was announced the next day — quieter, lighter, with super-human joint ranges (360° at knees and elbows). The first deployment target: Hyundai's plants.",
+          "sources": [
+            { "label": "Boston Dynamics · farewell to HD Atlas", "url": "https://www.bostondynamics.com/resources/blog/farewell-atlas" },
+            { "label": "Boston Dynamics · all-new Atlas", "url": "https://bostondynamics.com/blog/electric-new-era-for-atlas/" }
+          ]
+        },
+        {
+          "year": "2024-02",
+          "title": "Figure 6.75 亿美元 B 轮",
+          "titleEn": "Figure's $675M Series B",
+          "desc": "Figure 完成 OpenAI、Microsoft、NVIDIA、Bezos 等领投的 6.75 亿美元 B 轮，估值 26 亿美元。一个月后与 OpenAI 合作发布的厨房交互视频再度刷屏。",
+          "descEn": "Figure closed a $675M Series B led by OpenAI, Microsoft, Nvidia and Jeff Bezos at a $2.6B valuation. A month later, the Figure × OpenAI kitchen-interaction video went viral all over again.",
+          "sources": [
+            { "label": "Figure · Series B", "url": "https://www.figure.ai/news/series-b-round" },
+            { "label": "Reuters · Figure raises $675M", "url": "https://www.reuters.com/technology/figure-ai-startup-building-humanoid-robots-raises-675-million-bezos-nvidia-2024-02-29/" }
+          ]
+        },
+        {
+          "year": "2024-03",
+          "title": "NVIDIA GR00T 与 Isaac",
+          "titleEn": "NVIDIA's GR00T and Isaac",
+          "desc": "NVIDIA GTC 主题演讲发布 Project GR00T——人形通用基础模型，并把 Isaac Lab/Sim/Manipulator/Perceptor 打包为机器人开发栈。Apple、Meta、Amazon 在同年宣布各自路线。",
+          "descEn": "At GTC, NVIDIA announced Project GR00T — a foundation model for humanoids — bundled with Isaac Lab / Sim / Manipulator / Perceptor as a full development stack. Apple, Meta and Amazon followed with their own roadmaps the same year.",
+          "sources": [
+            { "label": "NVIDIA · Project GR00T", "url": "https://developer.nvidia.com/blog/nvidia-announces-project-gr00t-foundation-model-for-humanoid-robots/" }
+          ]
+        },
+        {
+          "year": "2024-05",
+          "title": "Unitree G1",
+          "titleEn": "Unitree G1",
+          "desc": "Unitree 发布 G1：1.27 m、35 kg、23 自由度，零售 9.9 万元人民币起（~$16K）——把人形价格首次压到消费级。同年 RoboCup、研究室、TikTok 上铺天盖地。",
+          "descEn": "Unitree released the G1: 1.27 m, 35 kg, 23 DOF, starting at RMB 99,000 (~$16K). First time a humanoid hit consumer-scale pricing. RoboCup, labs and TikTok lit up.",
+          "sources": [
+            { "label": "Unitree · G1", "url": "https://www.unitree.com/g1" }
+          ]
+        },
+        {
+          "year": "2024-08",
+          "title": "1X NEO Beta",
+          "titleEn": "1X NEO Beta",
+          "desc": "1X 发布 NEO Beta：1.65 m、约 30 kg，使用编织肌（musculoskeletal-style soft drive）追求'安全可触摸'。视频中 NEO 在厨房与人互动、被孩子拥抱。",
+          "descEn": "1X unveiled NEO Beta: 1.65 m, ~30 kg, musculoskeletal soft drive aimed at safe physical contact with people. The launch video showed NEO interacting in a kitchen and being hugged by a child.",
+          "sources": [
+            { "label": "1X · NEO Beta", "url": "https://www.1x.tech/neo" }
+          ]
+        },
+        {
+          "year": "2024-10",
+          "title": "Physical Intelligence π0",
+          "titleEn": "Physical Intelligence π0",
+          "desc": "硅谷 Physical Intelligence（Karol Hausman、Sergey Levine 等）发布 π0——跨多种本体（Franka 双臂、ALOHA、人形）通用的视觉-语言-动作模型。同月完成 4 亿美元融资，估值 24 亿。",
+          "descEn": "Bay-area Physical Intelligence (Karol Hausman, Sergey Levine and others) released π0 — a vision-language-action model generalising across Franka bimanual arms, ALOHA rigs and humanoid bodies. A $400M round at a $2.4B valuation closed in the same month.",
+          "sources": [
+            { "label": "Physical Intelligence · π0", "url": "https://www.physicalintelligence.company/blog/pi0" },
+            { "label": "Bloomberg · PI $400M", "url": "https://www.bloomberg.com/news/articles/2024-11-04/jeff-bezos-thrive-back-physical-intelligence-at-2-4-billion-value" }
+          ]
+        },
+        {
+          "year": "2024-12",
+          "title": "Optimus 进 Fremont 工厂",
+          "titleEn": "Optimus on the Fremont Floor",
+          "desc": "Tesla 公布 Optimus 在 Fremont 与 Austin 工厂搬运电池单元的视频。Musk 给出 2025 年 10K–100K 台外销、2026 年量产 50K–100K 台的承诺（'commitment'）。",
+          "descEn": "Tesla released video of Optimus moving battery cells inside Fremont and Austin. Musk publicly committed to shipping 10K–100K external units in 2025 and producing 50K–100K in 2026.",
+          "sources": [
+            { "label": "Tesla AI · Optimus", "url": "https://www.tesla.com/AI" }
+          ]
+        },
+        {
+          "year": "2025-Q1",
+          "title": "中国'人形六小龙'登场",
+          "titleEn": "China's 'Six Tigers' Take the Stage",
+          "desc": "宇树 (Unitree)、智元 (AgiBot)、银河通用 (Galbot)、星动纪元 (Robot Era)、傅利叶 (Fourier)、追觅 (Dreame) 被合称'人形六小龙'。工信部 2023 年文件后，地方专项基金与产业园纷纷成立。",
+          "descEn": "Unitree, AgiBot (Zhiyuan), Galbot, Robot Era, Fourier and Dreame became China's 'six tigers' of humanoid robotics. Provincial funds and dedicated industrial parks proliferated after MIIT's 2023 policy paper.",
+          "sources": [
+            { "label": "MIIT · 人形机器人创新发展指导意见", "url": "https://www.miit.gov.cn/zwgk/zcwj/wjfb/yj/art/2023/art_8aafa39e1c8a4ea394b86c7e9f06da08.html" },
+            { "label": "Reuters · China's humanoid push", "url": "https://www.reuters.com/technology/chinas-humanoid-robot-makers-race-build-cheaper-machines-2024-04-15/" }
+          ]
+        },
+        {
+          "year": "2025-03",
+          "title": "Apptronik 完成 3.5 亿美元 A 轮",
+          "titleEn": "Apptronik Closes $350M Series A",
+          "desc": "Apptronik 完成由 Google 与 B Capital 领投、Capital Factory 跟投的 3.5 亿美元 A 轮，与 Mercedes-Benz Berlin/Sindelfingen 工厂的 Apollo 试点扩展为多产线部署。",
+          "descEn": "Apptronik closed a $350M Series A led by Google and B Capital (with Capital Factory). The Mercedes-Benz Berlin/Sindelfingen pilot for Apollo expanded to multiple production lines.",
+          "sources": [
+            { "label": "Apptronik · Series A", "url": "https://apptronik.com/news/apptronik-raises-350m-series-a" }
+          ]
+        },
+        {
+          "year": "2025-Q2",
+          "title": "Figure 02 在 BMW 量产线",
+          "titleEn": "Figure 02 on the BMW Line",
+          "desc": "Figure 02 进入 BMW Spartanburg 工厂参与车身部件装配的端到端试点——Figure 称之为'首批通用人形在量产汽车厂端到端运行'。",
+          "descEn": "Figure 02 entered an end-to-end pilot for body-part assembly at BMW Spartanburg. Figure billed it as 'one of the first cases of a general-purpose humanoid working end-to-end inside a production automotive plant'.",
+          "sources": [
+            { "label": "BMW Group · Figure deployment", "url": "https://www.press.bmwgroup.com/global/article/detail/T0444022EN/" },
+            { "label": "Figure · Figure 02", "url": "https://www.figure.ai/news/figure-02" }
+          ]
+        },
+        {
+          "year": "2026 (展望)",
+          "title": "通用人形首批商业出货",
+          "titleEn": "First Commercial Shipments (outlook)",
+          "desc": "Figure、Apptronik、1X、宇树、智元等公司承诺 2026 年内年产 5,000 – 100,000 台量级。Goldman Sachs 与 Morgan Stanley 预测 2035 年 TAM 1,500 亿 – 5,000 亿美元。",
+          "descEn": "Figure, Apptronik, 1X, Unitree and AgiBot have publicly committed to annual production of 5,000–100,000 units in 2026. Goldman Sachs and Morgan Stanley project a 2035 TAM of $150B–$500B.",
+          "sources": [
+            { "label": "Goldman Sachs · humanoid TAM", "url": "https://www.goldmansachs.com/insights/articles/the-global-market-for-robots-could-reach-38-billion-by-2035" },
+            { "label": "Morgan Stanley · humanoid primer", "url": "https://www.morganstanley.com/ideas/humanoid-robot-market-5-trillion-by-2050" }
+          ]
+        }
+      ]
+    }
+  ],
+  "roster": [
+    { "name": "Tesla Optimus Gen 2", "company": "Tesla", "year": 2023, "country": "US", "height": "1.73 m", "weight": "57 kg", "dof": "28 body / 11 hand", "payload": "20 kg", "drive": "Electric", "status": "Pilot in Fremont/Austin", "source": "https://www.tesla.com/Optimus" },
+    { "name": "Figure 02", "company": "Figure AI", "year": 2024, "country": "US", "height": "1.68 m", "weight": "70 kg", "dof": "≥30 (16-DOF hand)", "payload": "25 kg", "drive": "Electric", "status": "Pilot at BMW Spartanburg", "source": "https://www.figure.ai/news/figure-02" },
+    { "name": "Apptronik Apollo", "company": "Apptronik", "year": 2023, "country": "US", "height": "1.73 m", "weight": "72 kg", "dof": "≥30", "payload": "25 kg", "drive": "Electric (hot-swap)", "status": "Pilot at Mercedes-Benz", "source": "https://apptronik.com/apollo" },
+    { "name": "1X NEO Beta", "company": "1X Technologies", "year": 2024, "country": "NO/US", "height": "1.65 m", "weight": "~30 kg", "dof": "≥30", "payload": "~20 kg", "drive": "Tendon / soft", "status": "Pre-order, home pilot", "source": "https://www.1x.tech/neo" },
+    { "name": "Boston Dynamics Atlas (electric)", "company": "Boston Dynamics", "year": 2024, "country": "US", "height": "~1.50 m", "weight": "~89 kg", "dof": "≥28 (>human ROM joints)", "payload": "Not disclosed", "drive": "Electric", "status": "Hyundai pilot", "source": "https://bostondynamics.com/blog/electric-new-era-for-atlas/" },
+    { "name": "Sanctuary Phoenix Gen 7", "company": "Sanctuary AI", "year": 2024, "country": "CA", "height": "1.70 m", "weight": "70 kg", "dof": "≥36 (20-DOF hand)", "payload": "25 kg", "drive": "Hybrid", "status": "Pilot at Magna", "source": "https://www.sanctuary.ai/blog/sanctuary-ai-unveils-phoenix" },
+    { "name": "Unitree H1", "company": "Unitree Robotics", "year": 2023, "country": "CN", "height": "1.80 m", "weight": "47 kg", "dof": "19", "payload": "≤15 kg", "drive": "Electric", "status": "On sale, $90K", "source": "https://www.unitree.com/h1" },
+    { "name": "Unitree G1", "company": "Unitree Robotics", "year": 2024, "country": "CN", "height": "1.27 m", "weight": "35 kg", "dof": "23–43 (variant)", "payload": "small", "drive": "Electric", "status": "On sale, ~$16K", "source": "https://www.unitree.com/g1" },
+    { "name": "AgiBot A2", "company": "AgiBot (智元)", "year": 2024, "country": "CN", "height": "1.75 m", "weight": "55 kg", "dof": "49", "payload": "20 kg", "drive": "Electric", "status": "Pilot deployments", "source": "https://www.zhiyuan-robot.com/" },
+    { "name": "Fourier GR-1", "company": "Fourier Intelligence", "year": 2023, "country": "CN", "height": "1.65 m", "weight": "55 kg", "dof": "40", "payload": "50 kg (research)", "drive": "Electric", "status": "Pre-order, ~$100K", "source": "https://www.fftai.com/products-gr1" },
+    { "name": "Agility Digit Gen 5", "company": "Agility Robotics", "year": 2024, "country": "US", "height": "1.75 m", "weight": "~65 kg", "dof": "≥18", "payload": "16 kg", "drive": "Electric", "status": "Deployed at GXO, Spanx", "source": "https://agilityrobotics.com/robots/digit" },
+    { "name": "UBTECH Walker S1", "company": "UBTECH", "year": 2024, "country": "CN", "height": "1.72 m", "weight": "76 kg", "dof": "41", "payload": "15 kg", "drive": "Electric", "status": "Pilot at NIO/BYD/Dongfeng", "source": "https://www.ubtrobot.com/products/walkers" }
+  ],
+  "compare": {
+    "headers": ["指标 / Metric", "Tesla Optimus", "Figure 02", "Atlas (electric)", "1X NEO", "Unitree H1", "Apollo"],
+    "rows": [
+      { "label": "首次公开 / Reveal", "values": ["2022-09", "2024-08", "2024-04", "2024-08", "2023-08", "2023-08"] },
+      { "label": "身高 / Height", "values": ["1.73 m", "1.68 m", "~1.50 m", "1.65 m", "1.80 m", "1.73 m"] },
+      { "label": "体重 / Weight", "values": ["57 kg", "70 kg", "~89 kg", "~30 kg", "47 kg", "72 kg"] },
+      { "label": "整机自由度 / Body DOF", "values": ["28", "≥30", "≥28", "≥30", "19", "≥30"] },
+      { "label": "手部自由度 / Hand DOF", "values": ["11 (→22)", "16", "n/a", "n/a", "low", "n/a"] },
+      { "label": "负载 / Payload", "values": ["20 kg", "25 kg", "n/a", "~20 kg", "≤15 kg", "25 kg"] },
+      { "label": "动力 / Actuation", "values": ["Electric", "Electric", "Electric", "Tendon/soft", "Electric", "Electric (hot-swap)"] },
+      { "label": "首批客户 / First customer", "values": ["Tesla (internal)", "BMW", "Hyundai", "Pre-order home", "Direct sale", "Mercedes-Benz"] },
+      { "label": "2026 出货承诺", "values": ["50K–100K", "未公开", "未公开", "未公开", "Direct sale", "未公开"] }
+    ]
+  },
+  "people": [
+    {
+      "name": "加藤一郎 Ichiro Kato",
+      "years": "1925–1994",
+      "role": "早稻田大学 'humanoid' 学派创立人；WABOT-1 / WABOT-2 主持",
+      "roleEn": "Founder of Waseda's humanoid school; PI of WABOT-1 / WABOT-2",
+      "quote": "机器人不需要像人，但与人共存时必须懂人。",
+      "quoteEn": "A robot need not look like a person — but if it is to live with people, it must understand them."
+    },
+    {
+      "name": "Hirai Hideaki 平井秀亮",
+      "years": "1953–",
+      "role": "Honda P2/P3/ASIMO 项目总工",
+      "roleEn": "Chief engineer of Honda's P-series and ASIMO",
+      "quote": "我们花了 11 年保密。但保密的是机器，不是问题。",
+      "quoteEn": "We kept eleven years of secrets. The secret was the machine — never the question."
+    },
+    {
+      "name": "Marc Raibert",
+      "years": "1949–",
+      "role": "Boston Dynamics 创始人；动态液压人形 Atlas 之父",
+      "roleEn": "Founder of Boston Dynamics; father of dynamic hydraulic humanoids",
+      "quote": "Balance is not a state, it's an active process.",
+      "quoteEn": "Balance is not a state; it is an active process."
+    },
+    {
+      "name": "Jun Ho Oh 吴俊浩",
+      "years": "1954–",
+      "role": "KAIST HUBO Lab；DRC 总冠军主帅",
+      "roleEn": "KAIST HUBO Lab; team leader, DRC Finals champion",
+      "quote": "把成本做下来比做高更难——但更重要。",
+      "quoteEn": "Driving the cost down is harder than driving the spec up — but it matters more."
+    },
+    {
+      "name": "Brett Adcock",
+      "years": "1984–",
+      "role": "Figure AI 创始人；Archer Aviation 联合创始人",
+      "roleEn": "Founder of Figure AI; co-founder of Archer Aviation",
+      "quote": "在五年内，人形会跟今天的智能手机一样普通。",
+      "quoteEn": "Within five years, humanoids will feel as ordinary as smartphones."
+    },
+    {
+      "name": "Bernt Bornich",
+      "years": "1985–",
+      "role": "1X Technologies CEO；编织肌人形 NEO 主导",
+      "roleEn": "CEO, 1X Technologies; lead architect of the soft-actuator NEO",
+      "quote": "我们造的不是工厂工人，是室友。",
+      "quoteEn": "We are not building factory workers. We are building roommates."
+    },
+    {
+      "name": "Wang Xingxing 王兴兴",
+      "years": "1990–",
+      "role": "Unitree 创始人；H1/G1 主导",
+      "roleEn": "Founder of Unitree; lead of H1 and G1",
+      "quote": "把机器人做到一辆电动自行车的价格，市场才真正开始。",
+      "quoteEn": "Markets only start when a robot costs what an e-bike costs."
+    },
+    {
+      "name": "Peng Zhihui 彭志辉",
+      "years": "1991–",
+      "role": "智元 (AgiBot) 联合创始人；前华为'天才少年'",
+      "roleEn": "Co-founder of AgiBot (Zhiyuan); formerly Huawei 'Genius Youth' programme",
+      "quote": "灵巧手是人形机器人最后未解的硬件难题。",
+      "quoteEn": "The dexterous hand is the humanoid's last unsolved hardware problem."
+    }
+  ]
+}
