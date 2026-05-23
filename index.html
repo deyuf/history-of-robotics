@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-editorial="ledger">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>History of Robot — 机器人编年史 · 从神话自动机到具身智能</title>
+  <meta name="description" content="按八个时代追踪机器人三千年的演化：从希腊神话的塔罗斯、达·芬奇机械骑士，到 Unimate、ASIMO、Atlas，再到 Figure、Optimus、宇树与通用具身智能。每个事件附原始来源。A chronicle of robotics in eight eras." />
+  <meta name="author" content="History of Robot" />
+  <meta name="theme-color" content="#F4EFE3" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#14110C" media="(prefers-color-scheme: dark)" />
+  <link rel="license" href="https://creativecommons.org/licenses/by/4.0/" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="History of Robot — 机器人编年史" />
+  <meta property="og:description" content="从神话自动机到具身智能：机器人三千年的编年史，附可靠来源。A chronicle of robotics in eight eras, with sources." />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:locale:alternate" content="en_US" />
+
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+
+  <!-- Fonts: Bricolage Grotesque + Fraunces + Inter + Noto Serif SC + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;500;700;900&family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..900&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+  />
+
+  <link rel="stylesheet" href="./styles.css" />
+
+  <!-- Theme + lang bootstrap (prevents FOUC) -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('hor-theme');
+        if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+
+        var l = localStorage.getItem('hor-lang');
+        if (!l) {
+          var nav = (navigator.language || 'en').toLowerCase();
+          l = nav.indexOf('zh') === 0 ? 'zh' : 'en';
+        }
+        document.documentElement.setAttribute('lang', l === 'zh' ? 'zh-CN' : 'en');
+        document.documentElement.setAttribute('data-lang', l);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <div class="progress" id="progress"></div>
+
+  <header class="masthead">
+    <div class="masthead-left tnum">VOL. I · ISSUE 01 · <span id="issue-date">2026-05-23</span></div>
+    <div class="nameplate">
+      History of Robot
+      <span class="cn" data-i18n-zh="机 · 器 · 人 · 编 · 年 · 史" data-i18n-en="A Chronicle of Robotics">机 · 器 · 人 · 编 · 年 · 史</span>
+    </div>
+    <div class="masthead-right tnum">
+      EST. 2026 <span class="dot">●</span> CC BY 4.0
+    </div>
+  </header>
+  <div class="gold-rail"></div>
+
+  <nav class="subnav" aria-label="primary">
+    <a href="#hero" data-i18n-zh="首页" data-i18n-en="Top">首页</a>
+    <span class="sep">/</span>
+    <a href="#era-1-automata" data-i18n-zh="神话" data-i18n-en="Myth">神话</a>
+    <a href="#era-4-industrial" data-i18n-zh="工业" data-i18n-en="Industrial">工业</a>
+    <a href="#era-5-mobility-humanoids" data-i18n-zh="人形" data-i18n-en="Humanoids">人形</a>
+    <a href="#era-7-deep-learning" data-i18n-zh="深度学习" data-i18n-en="Deep Learning">深度学习</a>
+    <a href="#era-8-embodied-ai" data-i18n-zh="具身智能" data-i18n-en="Embodied AI">具身智能</a>
+    <span class="sep">/</span>
+    <a href="#charts" data-i18n-zh="数据" data-i18n-en="Data">数据</a>
+    <a href="#people" data-i18n-zh="人物" data-i18n-en="People">人物</a>
+    <a href="#methods" data-i18n-zh="方法与来源" data-i18n-en="Method">方法与来源</a>
+    <div class="right">
+      <a href="https://github.com/deyuf/history-of-robotic" target="_blank" rel="noopener">GitHub</a>
+      <button class="theme-toggle" id="lang-toggle" aria-label="切换语言">EN</button>
+      <button class="theme-toggle" id="theme-toggle" aria-label="切换主题">☾ DARK</button>
+    </div>
+  </nav>
+
+  <div class="shell">
+    <aside class="rail" aria-label="目录">
+      <h6 id="rail-head">Contents · 编目</h6>
+      <ol id="toc"></ol>
+      <div class="rail-foot" id="rail-foot"></div>
+    </aside>
+
+    <main class="main">
+      <section class="hero" id="hero">
+        <div class="kicker" id="hero-kicker"></div>
+        <h1 id="hero-title"></h1>
+        <p class="lead" id="lead"></p>
+        <div class="hero-meta" id="hero-meta"></div>
+      </section>
+
+      <div id="eras"></div>
+
+      <section class="charts-section" id="charts">
+        <div class="section-head">
+          <div class="section-eyebrow" id="chart-eyebrow"></div>
+          <h2 id="chart-section-title"></h2>
+        </div>
+        <p id="chart-lead" style="max-width:var(--measure); color:var(--ink-soft); line-height:var(--lh-relaxed);"></p>
+        <div class="chart" id="chart-industrial"></div>
+        <div class="chart" id="chart-funding"></div>
+      </section>
+
+      <section class="people-section" id="people">
+        <div class="section-head">
+          <div class="section-eyebrow" id="people-eyebrow"></div>
+          <h2 id="people-section-title"></h2>
+        </div>
+        <div class="people-grid" id="people-grid"></div>
+      </section>
+
+      <section class="methods-section" id="methods">
+        <div class="section-head">
+          <div class="section-eyebrow" id="methods-eyebrow"></div>
+          <h2 id="methods-section-title"></h2>
+        </div>
+        <p id="methods-p1"></p>
+        <p id="methods-p2"></p>
+        <p id="methods-p3"></p>
+
+        <h3 id="methods-sources-head" style="font-family:var(--font-editorial); font-weight:700; font-size:var(--fs-h4); margin:32px 0 8px;"></h3>
+        <ul class="source-list">
+          <li><a href="https://ifr.org" target="_blank" rel="noopener">International Federation of Robotics (IFR)</a> — World Robotics</li>
+          <li><a href="https://spectrum.ieee.org/topic/robotics/" target="_blank" rel="noopener">IEEE Spectrum — Robotics</a></li>
+          <li><a href="https://www.ieee-ras.org" target="_blank" rel="noopener">IEEE Robotics &amp; Automation Society</a></li>
+          <li><a href="https://www.computerhistory.org" target="_blank" rel="noopener">Computer History Museum</a></li>
+          <li><a href="https://www.sciencemuseum.org.uk" target="_blank" rel="noopener">Science Museum, London</a></li>
+          <li><a href="https://americanhistory.si.edu" target="_blank" rel="noopener">Smithsonian — National Museum of American History</a></li>
+          <li><a href="https://www.sri.com" target="_blank" rel="noopener">SRI International</a></li>
+          <li><a href="https://www.ri.cmu.edu" target="_blank" rel="noopener">CMU Robotics Institute</a></li>
+          <li><a href="https://ai.stanford.edu" target="_blank" rel="noopener">Stanford AI Lab</a></li>
+          <li><a href="https://www.darpa.mil" target="_blank" rel="noopener">DARPA</a></li>
+          <li><a href="https://www.bostondynamics.com" target="_blank" rel="noopener">Boston Dynamics</a></li>
+          <li><a href="https://global.honda" target="_blank" rel="noopener">Honda Worldwide</a></li>
+          <li><a href="https://www.nasa.gov" target="_blank" rel="noopener">NASA</a></li>
+          <li><a href="https://commons.wikimedia.org" target="_blank" rel="noopener">Wikimedia Commons</a></li>
+        </ul>
+      </section>
+
+      <footer class="footer">
+        <div id="footer-left"></div>
+        <div class="right" id="footer-right"></div>
+      </footer>
+    </main>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
