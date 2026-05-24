@@ -91,13 +91,9 @@ describe('index.html — main chronicle rendering', () => {
     expect(imgs.length).toBeGreaterThanOrEqual(40);
   });
 
-  it('renders portraits in people cards where available', () => {
-    const portraits = document.querySelectorAll('.person-portrait img');
-    expect(portraits.length).toBeGreaterThanOrEqual(3);
-    portraits.forEach(img => {
-      expect(img.src).toContain('Special:FilePath/');
-      expect(img.alt).toBeTruthy();
-    });
+  it('does not render portraits in people cards (text-only by design)', () => {
+    const portraits = document.querySelectorAll('.person-portrait, .person img');
+    expect(portraits.length).toBe(0);
   });
 
   it('event sources are external links with rel=noopener', () => {

@@ -250,29 +250,18 @@
     `;
   }
 
-  // ── Render: people grid ──────────────────────────────────────
+  // ── Render: people grid (text only — portraits intentionally omitted) ─
   function renderPeople() {
     const d = state.data;
     if (!d.people) return;
-    $('#people-grid').innerHTML = d.people.map(p => {
-      const portrait = p.image ? `
-        <div class="person-portrait">
-          <a href="${commonsPage(p.image)}" target="_blank" rel="noopener">
-            <img src="${imageURL(p.image, 320)}" alt="${esc(p.name)}" loading="lazy" />
-          </a>
-        </div>` : '';
-      return `
-        <article class="person${p.image ? ' has-portrait' : ''}">
-          ${portrait}
-          <div class="person-text">
-            <h3 class="name">${esc(p.name)}</h3>
-            <div class="years">${esc(p.years)}</div>
-            <div class="role">${esc(pick(p, 'role'))}</div>
-            <div class="quote">${esc(pick(p, 'quote'))}</div>
-          </div>
-        </article>
-      `;
-    }).join('');
+    $('#people-grid').innerHTML = d.people.map(p => `
+      <article class="person">
+        <h3 class="name">${esc(p.name)}</h3>
+        <div class="years">${esc(p.years)}</div>
+        <div class="role">${esc(pick(p, 'role'))}</div>
+        <div class="quote">${esc(pick(p, 'quote'))}</div>
+      </article>
+    `).join('');
   }
 
   // ── Render: humanoid roster + compare ────────────────────────
