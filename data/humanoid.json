@@ -279,9 +279,9 @@
             }
           ],
           "image": {
-            "file": "Honda_P2_front_Honda_Collection_Hall.jpg",
-            "credit": "Honda P-series at the Honda Collection Hall (CC-BY-SA 3.0)",
-            "alt": "Honda P-series humanoid"
+            "file": "Honda_P3_Fan_Fun_Lab.jpg",
+            "credit": "Honda P3 at the Fan Fun Lab, photo by Morio (CC-BY-SA 3.0)",
+            "alt": "Honda P3 humanoid robot, 1997"
           }
         },
         {
@@ -291,8 +291,8 @@
           "desc": "Advanced Step in Innovative Mobility，1.30 m、52 kg、26 自由度，能小跑、踢球、识别人脸。它把'人形机器人'写进了 21 世纪 00 年代的公众想象。Honda 在此后 18 年共迭代 7 个版本。",
           "descEn": "Advanced Step in Innovative Mobility — 1.30 m, 52 kg, 26 DOF, jogging, kicking a ball, recognising faces. ASIMO fixed the humanoid in the public imagination of the 2000s; Honda iterated it across seven versions over 18 years.",
           "image": {
-            "file": "Honda_ASIMO_(ver._2011)_2011_Tokyo_Motor_Show.jpg",
-            "credit": "ASIMO (2011 version) at Tokyo Motor Show, photo by Morio",
+            "file": "Asimo_at_Honda_Collection_Hall.jpg",
+            "credit": "ASIMO at the Honda Collection Hall (CC0)",
             "alt": "Honda ASIMO humanoid"
           },
           "sources": [
@@ -327,9 +327,9 @@
             }
           ],
           "image": {
-            "file": "Honda_ASIMO_(ver._2011)_2011_Tokyo_Motor_Show.jpg",
-            "credit": "Contemporaneous Japanese humanoid — ASIMO at Tokyo Motor Show (CC-BY-SA 3.0)",
-            "alt": "Japanese humanoid of the early 2000s"
+            "file": "HRP-2_front_Science_Museum_Tokyo.jpg",
+            "credit": "AIST HRP-2 'Promet' at the Science Museum Tokyo, photo by Morio (CC-BY-SA 3.0)",
+            "alt": "AIST HRP-2 humanoid"
           }
         },
         {
@@ -385,8 +385,8 @@
             }
           ],
           "image": {
-            "file": "Nao_Robot_(Robocup_2016).jpg",
-            "credit": "Aldebaran NAO at RoboCup 2016 (CC0)",
+            "file": "Innorobo_2015_-_NAO_(cropped).JPG",
+            "credit": "Aldebaran NAO at Innorobo 2015, photo by Xavier Caré (CC-BY-SA 4.0)",
             "alt": "Aldebaran NAO humanoid"
           }
         },
@@ -403,9 +403,9 @@
             }
           ],
           "image": {
-            "file": "Ameca_Generation_1.jpg",
-            "credit": "Engineered Arts Ameca — contemporaneous female-form humanoid (CC-BY-SA 4.0)",
-            "alt": "Female-form humanoid robot"
+            "file": "HRP-4C_-_SIGGRAPH_Asia_2009_(2009-12-18_15.06.08).jpg",
+            "credit": "AIST HRP-4C 'Miim' at SIGGRAPH Asia 2009 (CC-BY 2.0)",
+            "alt": "AIST HRP-4C female-form humanoid"
           }
         },
         {
@@ -421,8 +421,8 @@
             }
           ],
           "image": {
-            "file": "ICub_-_Festival_Economia_2018_2.jpg",
-            "credit": "iCub at Festival Economia 2018 (CC-BY-SA 4.0)",
+            "file": "ICub_Innorobo_Lyon_2014.JPG",
+            "credit": "iCub at Innorobo Lyon 2014, photo by Xavier Caré (CC-BY-SA 4.0)",
             "alt": "IIT iCub humanoid"
           }
         },
@@ -491,9 +491,9 @@
             }
           ],
           "image": {
-            "file": "Atlas_frontview_2013.jpg",
-            "credit": "Boston Dynamics Atlas at the DRC, DARPA (Public domain)",
-            "alt": "Boston Dynamics Atlas at the DARPA Robotics Challenge"
+            "file": "President_Obama_Talks_to_Designers_of_the_SCHAFT_Robot.jpg",
+            "credit": "President Obama meets SCHAFT's designers (Public domain, U.S. Dept. of State)",
+            "alt": "SCHAFT robot and President Obama"
           }
         },
         {
@@ -571,9 +571,9 @@
             }
           ],
           "image": {
-            "file": "SoftBank_pepper.JPG",
-            "credit": "SoftBank Pepper, photo by Tokumeigakarinoaoshima (CC0)",
-            "alt": "SoftBank Pepper service humanoid"
+            "file": "Aéroport_de_Prague_Ruzyně,_Pepper_(robot).jpg",
+            "credit": "SoftBank Pepper at Prague Airport, photo by Benoît Prieur (CC0)",
+            "alt": "SoftBank Pepper service humanoid at airport"
           }
         }
       ]
@@ -623,9 +623,9 @@
             }
           ],
           "image": {
-            "file": "Honda_ASIMO_(ver._2011)_2011_Tokyo_Motor_Show.jpg",
-            "credit": "Honda ASIMO (2011), the retired final form, photo by Morio (CC-BY-SA 3.0)",
-            "alt": "Honda ASIMO humanoid"
+            "file": "Asimo_at_Honda_Collection_Hall_4.jpg",
+            "credit": "ASIMO at the Honda Collection Hall, retired in 2018 (CC0)",
+            "alt": "Honda ASIMO at retirement"
           }
         },
         {
@@ -663,8 +663,8 @@
             }
           ],
           "image": {
-            "file": "Optimus_bot_at_Tesla_showroom_-_20251118_-_01.jpg",
-            "credit": "Tesla Optimus at a Tesla showroom (CC-BY-SA 4.0)",
+            "file": "Optimus_Tesla.jpg",
+            "credit": "Tesla Optimus, photo by Benjamin Ceci (Public domain)",
             "alt": "Tesla Optimus humanoid"
           }
         },
@@ -699,8 +699,8 @@
             }
           ],
           "image": {
-            "file": "Optimus_bot_at_Tesla_showroom_-_20251118_-_01.jpg",
-            "credit": "Tesla Optimus at a Tesla showroom (CC-BY-SA 4.0)",
+            "file": "Latest_Tesla_Optimus_Humanoid_Robot.jpg",
+            "credit": "Tesla Optimus, photo by Steve Jurvetson (CC-BY 2.0)",
             "alt": "Tesla Optimus humanoid"
           }
         },
@@ -747,9 +747,9 @@
             }
           ],
           "image": {
-            "file": "Optimus_bot_at_Tesla_showroom_-_20251118_-_01.jpg",
-            "credit": "Contemporary general-purpose humanoid — Tesla Optimus (CC-BY-SA 4.0)",
-            "alt": "General-purpose humanoid"
+            "file": "Figure-ai-logo.svg",
+            "credit": "Figure AI logo (CC-BY 4.0)",
+            "alt": "Figure AI"
           }
         },
         {
@@ -835,9 +835,9 @@
           "desc": "Tesla 12 月发布 Optimus Gen 2：1.73–1.80 m、55–57 kg、28 自由度躯体 + 11 自由度手，行走 5 km/h，2.3 kWh 电池，可载 20 kg。视频中展示握鸡蛋与瑜伽平衡。",
           "descEn": "Tesla released Optimus Gen 2 in December: 1.73–1.80 m, 55–57 kg, 28-DOF body and 11-DOF hands, walking at 5 km/h, 2.3 kWh battery, 20 kg payload. Demos: holding an egg, holding a yoga pose.",
           "image": {
-            "file": "Optimus_bot_at_Tesla_showroom_-_20251118_-_01.jpg",
-            "credit": "Tesla Optimus at Tesla showroom, 2025",
-            "alt": "Tesla Optimus humanoid"
+            "file": "Tesla_Bot_2023.jpg",
+            "credit": "Tesla Bot, 2023 (CC-BY-SA 4.0)",
+            "alt": "Tesla Optimus Gen 2 humanoid"
           },
           "sources": [
             {
@@ -889,9 +889,9 @@
             }
           ],
           "image": {
-            "file": "Optimus_bot_at_Tesla_showroom_-_20251118_-_01.jpg",
-            "credit": "Contemporary general-purpose humanoid (CC-BY-SA 4.0)",
-            "alt": "General-purpose humanoid"
+            "file": "Figure-ai-logo.svg",
+            "credit": "Figure AI logo (CC-BY 4.0)",
+            "alt": "Figure AI"
           }
         },
         {
@@ -1387,7 +1387,9 @@
       "role": "Figure AI 创始人；Archer Aviation 联合创始人",
       "roleEn": "Founder of Figure AI; co-founder of Archer Aviation",
       "quote": "在五年内，人形会跟今天的智能手机一样普通。",
-      "quoteEn": "Within five years, humanoids will feel as ordinary as smartphones."
+      "quoteEn": "Within five years, humanoids will feel as ordinary as smartphones.",
+      "image": "Brett_Adcock_01.jpg",
+      "imageCredit": "Brett Adcock, Figure AI (CC-BY-SA 4.0)"
     },
     {
       "name": "Bernt Bornich",
@@ -1403,7 +1405,9 @@
       "role": "Unitree 创始人；H1/G1 主导",
       "roleEn": "Founder of Unitree; lead of H1 and G1",
       "quote": "把机器人做到一辆电动自行车的价格，市场才真正开始。",
-      "quoteEn": "Markets only start when a robot costs what an e-bike costs."
+      "quoteEn": "Markets only start when a robot costs what an e-bike costs.",
+      "image": "Wang_Xingxing_at_the_World_Economic_Forum's_16th_Annual_Meeting_of_the_New_Champions_in_Tianjin,_China.png",
+      "imageCredit": "Wang Xingxing at the WEF, by China News Service (CC-BY 3.0)"
     },
     {
       "name": "Peng Zhihui 彭志辉",
@@ -1412,6 +1416,36 @@
       "roleEn": "Co-founder of AgiBot (Zhiyuan); formerly Huawei 'Genius Youth' programme",
       "quote": "灵巧手是人形机器人最后未解的硬件难题。",
       "quoteEn": "The dexterous hand is the humanoid's last unsolved hardware problem."
+    },
+    {
+      "name": "Cynthia Breazeal",
+      "years": "1967–",
+      "role": "MIT Media Lab；社交机器人创始人",
+      "roleEn": "MIT Media Lab; founder of social robotics",
+      "quote": "人形机器人最难的不是关节，是关系。",
+      "quoteEn": "A humanoid robot's hardest problem isn't its joints — it's its relationships.",
+      "image": "Cynthia_Breazeal.jpg",
+      "imageCredit": "Cynthia Breazeal, MIT Media Lab (CC-BY-SA 4.0)"
+    },
+    {
+      "name": "Hiroshi Ishiguro 石黑浩",
+      "years": "1963–",
+      "role": "大阪大学；Geminoid 系列；Android Science 学派",
+      "roleEn": "Osaka University; Geminoid series; founder of Android Science",
+      "quote": "我们造像人的机器，是为了理解人本身。",
+      "quoteEn": "We build machines that look like us in order to understand ourselves.",
+      "image": "Hiroshi_Ishiguro_at_Italian_Tech_Week_panel_(cropped).jpg",
+      "imageCredit": "Hiroshi Ishiguro at Italian Tech Week (CC-BY-SA 4.0)"
+    },
+    {
+      "name": "Hiroaki Kitano 北野宏明",
+      "years": "1961–",
+      "role": "RoboCup 共同发起人；OIST 总裁",
+      "roleEn": "Co-founder of RoboCup; President of OIST",
+      "quote": "让机器人在 2050 年前赢下世界杯——这是一个迫人前进的目标。",
+      "quoteEn": "Beat the world cup champions by 2050 — a goal that drives the field forward.",
+      "image": "Hiroaki_Kitano.jpg",
+      "imageCredit": "Hiroaki Kitano, photo by Joi Ito (CC-BY 2.0)"
     }
   ]
 }
