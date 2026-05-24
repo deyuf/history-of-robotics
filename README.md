@@ -1,4 +1,4 @@
-# History of Robot
+# History of Robotics
 
 A bilingual editorial chronicle of robotics — from Greek myth and Edo karakuri to Unimate, ASIMO, Atlas, Figure, Optimus and embodied general intelligence.
 

@@ -3,24 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>History of Humanoid Robot — From WABOT-1 to Optimus</title>
+  <title>History of Humanoid Robotics — From WABOT-1 to Optimus</title>
   <meta name="description" content="A focused chronicle of humanoid robotics: Waseda WABOT, Honda P-series, ASIMO, HUBO, Atlas, Pepper, Digit, Optimus, Figure, NEO, Apollo, Unitree, AgiBot. 1968–2026, every milestone sourced." />
-  <meta name="author" content="History of Robot" />
+  <meta name="author" content="History of Robotics" />
   <meta name="theme-color" content="#F6F2E6" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#0E0E0C" media="(prefers-color-scheme: dark)" />
   <link rel="license" href="https://creativecommons.org/licenses/by/4.0/" />
-  <link rel="canonical" href="https://historyofrobot.org/humanoid.html" />
-  <link rel="alternate" hreflang="en" href="https://historyofrobot.org/humanoid.html" />
-  <link rel="alternate" hreflang="zh" href="https://historyofrobot.org/humanoid.html?lang=zh" />
-  <link rel="alternate" hreflang="x-default" href="https://historyofrobot.org/humanoid.html" />
+  <link rel="canonical" href="https://historyofrobotics.org/humanoid.html" />
+  <link rel="alternate" hreflang="en" href="https://historyofrobotics.org/humanoid.html" />
+  <link rel="alternate" hreflang="zh" href="https://historyofrobotics.org/humanoid.html?lang=zh" />
+  <link rel="alternate" hreflang="x-default" href="https://historyofrobotics.org/humanoid.html" />
 
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="History of Humanoid Robot" />
+  <meta property="og:title" content="History of Humanoid Robotics" />
   <meta property="og:description" content="From WABOT-1 to Optimus: fifty years of two legs, two hands and one brain." />
   <meta property="og:locale" content="en_US" />
   <meta property="og:locale:alternate" content="zh_CN" />
-  <meta property="og:url" content="https://historyofrobot.org/humanoid.html" />
-  <meta property="og:image" content="https://historyofrobot.org/og.svg" />
+  <meta property="og:url" content="https://historyofrobotics.org/humanoid.html" />
+  <meta property="og:image" content="https://historyofrobotics.org/og.svg" />
   <meta name="twitter:card" content="summary_large_image" />
 
   <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
@@ -40,16 +40,16 @@
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "History of Humanoid Robot",
+    "headline": "History of Humanoid Robotics",
     "description": "A focused chronicle of humanoid robotics, 1968–2026.",
-    "image": "https://historyofrobot.org/og.svg",
+    "image": "https://historyofrobotics.org/og.svg",
     "datePublished": "2026-05-23",
     "dateModified": "2026-05-23",
     "inLanguage": ["en", "zh"],
-    "author": { "@type": "Organization", "name": "History of Robot" },
-    "publisher": { "@type": "Organization", "name": "History of Robot" },
+    "author": { "@type": "Organization", "name": "History of Robotics" },
+    "publisher": { "@type": "Organization", "name": "History of Robotics" },
     "license": "https://creativecommons.org/licenses/by/4.0/",
-    "isPartOf": { "@type": "WebSite", "name": "History of Robot", "url": "https://historyofrobot.org/" }
+    "isPartOf": { "@type": "WebSite", "name": "History of Robotics", "url": "https://historyofrobotics.org/" }
   }
   </script>
 
@@ -59,6 +59,9 @@
     href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;500;700;900&family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" />
 
   <link rel="stylesheet" href="./styles.css" />
+
+  <!-- Data preload (works on file:// too). Falls back to fetch if absent. -->
+  <script src="./data/humanoid.data.js" defer></script>
 
   <script>
     (function () {
@@ -83,7 +86,7 @@
       <div id="mast-date">SAT &middot; MAY 23, 2026</div>
     </div>
     <div class="mast-center">
-      <h1 class="nameplate">HISTORY OF ROBOT</h1>
+      <h1 class="nameplate">HISTORY OF ROBOTICS</h1>
       <div class="nameplate-sub" data-i18n-en="Humanoid Edition" data-i18n-zh="人形机器人特刊">Humanoid Edition</div>
     </div>
     <div class="mast-right">
@@ -99,10 +102,8 @@
   </header>
 
   <div class="mast-foot">
-    <a href="./index.html" data-i18n-en="MAIN CHRONICLE" data-i18n-zh="主编年史">MAIN CHRONICLE</a>
-    <span class="dot">·</span>
-    <a href="./humanoid.html" data-i18n-en="HUMANOID EDITION" data-i18n-zh="人形机器人特刊">HUMANOID EDITION</a>
-    <span class="dot">·</span>
+    <a class="is-sister" href="./index.html" data-i18n-en="MAIN CHRONICLE" data-i18n-zh="主编年史">MAIN CHRONICLE</a>
+    <a class="is-current" href="./humanoid.html" data-i18n-en="HUMANOID EDITION" data-i18n-zh="人形机器人特刊">HUMANOID EDITION</a>
     <a href="https://github.com/deyuf/history-of-robot" target="_blank" rel="noopener">GITHUB</a>
   </div>
 
@@ -183,6 +184,8 @@
       </section>
     </main>
 
+    <aside class="rail-right" id="rail-right" aria-label="Section navigation"></aside>
+
     <footer class="footer">
       <div class="footer-left" id="footer-left"></div>
       <div class="footer-right" id="footer-right"></div>
@@ -200,6 +203,6 @@
     </div>
   </dialog>
 
-  <script src="./app.js"></script>
+  <script src="./app.bundle.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,24 @@
+{
+  "name": "history-of-robotics",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A bilingual editorial chronicle of robotics, from antiquity to embodied AI.",
+  "scripts": {
+    "build": "node tools/build.mjs",
+    "build:data": "node tools/build-data.mjs",
+    "serve": "python3 -m http.server 8765",
+    "pretest": "npm run build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "test:e2e": "playwright test",
+    "test:all": "npm run test:coverage && npm run test:e2e"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.0",
+    "@vitest/coverage-v8": "^2.1.9",
+    "jsdom": "^25.0.0",
+    "vitest": "^2.1.9"
+  }
+}

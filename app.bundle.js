@@ -1,3 +1,5 @@
+/* AUTO-GENERATED from app.js. Run `npm run build` to refresh. */
+(function () { 'use strict';
 /* =============================================================
    History of Robot — main application script (ES module)
    - Shared between index.html (main chronicle) and humanoid.html
@@ -760,12 +762,5 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
   else boot();
 
-// ── Named exports for tests (no-op when loaded as a browser module) ──
-export {
-  boot, loadData, renderAll,
-  renderCover, renderTabs, renderEras, renderEvent, renderPeople,
-  renderRoster, renderCompare, renderMethod, renderFooter,
-  renderIndustrialChart, renderFundingChart,
-  setupThemeToggle, setupLangToggle, setupCommandPalette,
-  state, tabLabel, roman
-};
+
+})();
