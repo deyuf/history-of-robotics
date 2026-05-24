@@ -385,18 +385,9 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; text-decoratio
   line-height: 1.25;
 }
 .rail-right .sister-block {
-  margin-top: 18px;
-  padding-top: 14px;
+  margin-top: 22px;
+  padding-top: 18px;
   border-top: 1px solid var(--rule-soft);
-}
-.rail-right .sister-block .head {
-  font-family: var(--f-mono);
-  font-size: 10px;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-  padding-left: 14px;
-  margin-bottom: 4px;
 }
 .rail-right .sister-block a {
   font-family: var(--f-sans);

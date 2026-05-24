@@ -14,6 +14,9 @@ export const HTML_HUMANOID = readFileSync(resolve(ROOT, 'humanoid.html'), 'utf8'
 export const DATA_TIMELINE = JSON.parse(readFileSync(resolve(ROOT, 'data/timeline.json'), 'utf8'));
 export const DATA_HUMANOID = JSON.parse(readFileSync(resolve(ROOT, 'data/humanoid.json'), 'utf8'));
 
+// app.js lives under src/ since the v2 restructure; the deployed bundle is dist/app.bundle.js
+export const APP_SOURCE_PATH = resolve(ROOT, 'src/app.js');
+
 // Inject the <body> innerHTML of a page into the current jsdom document.
 function applyPage(html) {
   const dom = new DOMParser().parseFromString(html, 'text/html');
@@ -58,7 +61,7 @@ export async function mountPage(which = 'main') {
 
   // Re-import app.js to get a fresh module evaluation
   vi.resetModules();
-  await import('../app.js?t=' + Date.now());
+  await import('../src/app.js?t=' + Date.now());
 
   // Boot is auto-fired by app.js; give it a microtask to settle
   await new Promise(r => setTimeout(r, 10));

@@ -59,7 +59,7 @@ describe('data sidecar (.data.js)', () => {
   });
 
   it('app.bundle.js exists, is IIFE-wrapped, and has no ESM exports', () => {
-    const b = readFileSync(resolve(ROOT, 'app.bundle.js'), 'utf8');
+    const b = readFileSync(resolve(ROOT, 'dist/app.bundle.js'), 'utf8');
     expect(b).toContain('(function () {');
     expect(b).toContain('})();');
     expect(b).not.toMatch(/^\s*export\s/m);
@@ -67,14 +67,14 @@ describe('data sidecar (.data.js)', () => {
     expect(b).toContain('async function boot()');
   });
 
-  it('both HTML pages reference app.bundle.js (not app.js)', () => {
+  it('both HTML pages reference dist/app.bundle.js (not src/app.js)', () => {
     const idx = readFileSync(resolve(ROOT, 'index.html'), 'utf8');
     const hum = readFileSync(resolve(ROOT, 'humanoid.html'), 'utf8');
-    expect(idx).toMatch(/src="\.\/app\.bundle\.js"/);
-    expect(hum).toMatch(/src="\.\/app\.bundle\.js"/);
-    // The non-bundled app.js must NOT be referenced from the HTML (avoids
-    // file:// breakage from <script type="module">).
-    expect(idx).not.toMatch(/src="\.\/app\.js"/);
-    expect(hum).not.toMatch(/src="\.\/app\.js"/);
+    expect(idx).toMatch(/src="\.\/dist\/app\.bundle\.js"/);
+    expect(hum).toMatch(/src="\.\/dist\/app\.bundle\.js"/);
+    // The non-bundled src/app.js must NOT be referenced from the HTML
+    // (avoids file:// breakage from <script type="module">).
+    expect(idx).not.toMatch(/src="\.\/src\/app\.js"/);
+    expect(hum).not.toMatch(/src="\.\/src\/app\.js"/);
   });
 });
