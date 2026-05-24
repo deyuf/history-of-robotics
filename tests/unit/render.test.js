@@ -86,9 +86,11 @@ describe('index.html — main chronicle rendering', () => {
     });
   });
 
-  it('has rich image coverage — at least 40 event images', () => {
-    const imgs = document.querySelectorAll('.event-img img');
-    expect(imgs.length).toBeGreaterThanOrEqual(40);
+  it('every attached image is uniquely tied to a single event (no duplicates)', () => {
+    // Accuracy over coverage: each image must depict exactly one event.
+    const srcs = Array.from(document.querySelectorAll('.event-img img'))
+      .map(img => img.src);
+    expect(new Set(srcs).size).toBe(srcs.length);
   });
 
   it('does not render portraits in people cards (text-only by design)', () => {
@@ -172,13 +174,13 @@ describe('humanoid.html — sister page rendering', () => {
     links.forEach(a => expect(a.href).toMatch(/^https?:\/\//));
   });
 
-  it('humanoid edition has strong image coverage (≥ 70 % of events)', () => {
-    // We intentionally drop images on events for which no faithful Wikimedia
-    // photo exists (e.g. Sanctuary Phoenix, 1X NEO, Fourier GR-1) rather
-    // than reuse a mismatched proxy from a different company.
-    const events = document.querySelectorAll('.event');
-    const withImg = document.querySelectorAll('.event-img img');
-    expect(withImg.length / events.length).toBeGreaterThanOrEqual(0.70);
+  it('every humanoid image is uniquely tied to a single event', () => {
+    // Accuracy over coverage: only attach an image where it actually
+    // depicts the subject. Events without a faithful Commons photo
+    // (Sanctuary Phoenix, 1X NEO, Fourier GR-1, …) simply have no image.
+    const srcs = Array.from(document.querySelectorAll('.event-img img'))
+      .map(img => img.src);
+    expect(new Set(srcs).size).toBe(srcs.length);
   });
 
   it('cross-page link in the cover body points to the main chronicle', () => {

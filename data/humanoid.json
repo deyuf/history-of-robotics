@@ -113,12 +113,7 @@
               "label": "Wikipedia · Zero Moment Point",
               "url": "https://en.wikipedia.org/wiki/Zero_moment_point"
             }
-          ],
-          "image": {
-            "file": "Automates-Jaquet-Droz-p1030493.jpg",
-            "credit": "Historical automata — context for early bipedal theory (CC-BY-SA 2.0)",
-            "alt": "Historical mechanical automaton"
-          }
+          ]
         },
         {
           "year": "1969",
@@ -131,12 +126,7 @@
               "label": "Waseda · Humanoid Robotics history",
               "url": "https://www.humanoid.waseda.ac.jp/booklet/kato_2.html"
             }
-          ],
-          "image": {
-            "file": "TeaAutomatAndMechanism.jpg",
-            "credit": "Karakuri tea-doll mechanism, Japan's older humanoid tradition",
-            "alt": "Karakuri tea-serving doll mechanism"
-          }
+          ]
         },
         {
           "year": "1973",
@@ -179,12 +169,7 @@
               "label": "Waseda · WABOT-2",
               "url": "https://www.humanoid.waseda.ac.jp/booklet/kato_3.html"
             }
-          ],
-          "image": {
-            "file": "The_Stanford_Arm.jpg",
-            "credit": "Era contemporaneous arm (Stanford Arm) — WABOT-2 image unavailable",
-            "alt": "Contemporaneous 1980s arm"
-          }
+          ]
         }
       ]
     },
@@ -222,12 +207,7 @@
               "label": "Honda · P-Series",
               "url": "https://global.honda/en/innovation/robotics/ASIMO/history.html"
             }
-          ],
-          "image": {
-            "file": "Honda_P2_front_Honda_Collection_Hall.jpg",
-            "credit": "Honda P-series humanoids, Honda Collection Hall (CC-BY-SA 3.0)",
-            "alt": "Honda P-series humanoid robot"
-          }
+          ]
         },
         {
           "year": "1996",
@@ -422,12 +402,7 @@
               "label": "DARPA · Robotics Challenge",
               "url": "https://www.darpa.mil/about-us/timeline/darpa-robotics-challenge"
             }
-          ],
-          "image": {
-            "file": "Atlas_frontview_2013.jpg",
-            "credit": "Boston Dynamics Atlas at the DRC, DARPA (Public domain)",
-            "alt": "Boston Dynamics Atlas humanoid"
-          }
+          ]
         }
       ]
     },
@@ -496,12 +471,7 @@
               "label": "IEEE Spectrum · DRC final results",
               "url": "https://spectrum.ieee.org/results-of-the-darpa-robotics-challenge-finals"
             }
-          ],
-          "image": {
-            "file": "Einstein-Hubo.jpg",
-            "credit": "KAIST Einstein-HUBO (CC-BY 2.5)",
-            "alt": "KAIST HUBO"
-          }
+          ]
         },
         {
           "year": "2016-02",
@@ -514,12 +484,7 @@
               "label": "Boston Dynamics YouTube · New Atlas",
               "url": "https://www.youtube.com/watch?v=rVlhMGQgDkY"
             }
-          ],
-          "image": {
-            "file": "Atlas_climbing_into_a_vehicle.jpg",
-            "credit": "Boston Dynamics Atlas in action, DARPA (Public domain)",
-            "alt": "Boston Dynamics Atlas humanoid"
-          }
+          ]
         },
         {
           "year": "2017-11",
@@ -532,12 +497,7 @@
               "label": "Boston Dynamics YouTube · Atlas backflip",
               "url": "https://www.youtube.com/watch?v=fRj34o4hN4I"
             }
-          ],
-          "image": {
-            "file": "Atlas_climbing_into_a_vehicle.jpg",
-            "credit": "Boston Dynamics Atlas in action, DARPA (Public domain)",
-            "alt": "Boston Dynamics Atlas humanoid"
-          }
+          ]
         },
         {
           "year": "2014",
@@ -628,12 +588,7 @@
               "label": "Reuters · Ford and Digit",
               "url": "https://www.reuters.com/technology/agility-robotics-build-mass-production-humanoid-robot-factory-2023-09-21/"
             }
-          ],
-          "image": {
-            "file": "Cassie_the_robot_01.jpg",
-            "credit": "Agility Robotics Cassie — predecessor of Digit (CC-BY-SA 2.0)",
-            "alt": "Agility Robotics Cassie biped"
-          }
+          ]
         },
         {
           "year": "2021-08",
@@ -746,11 +701,6 @@
           "titleEn": "Unitree H1 — China's First High-Dynamic Biped",
           "desc": "杭州宇树发布 H1：1.80 m、47 kg、19 自由度，膝输出 360 N·m、可奔跑 1.5 m/s。定价 9 万美元——比同级西方产品低一个数量级。",
           "descEn": "Hangzhou Unitree released H1: 1.80 m, 47 kg, 19 DOF, 360 N·m knee torque, 1.5 m/s running. List price $90K — an order of magnitude below comparable Western platforms.",
-          "image": {
-            "file": "Unitree_G1.jpg",
-            "credit": "Unitree G1 — sibling of the H1 (CC0)",
-            "alt": "Unitree humanoid robot"
-          },
           "sources": [
             {
               "label": "Unitree · H1",
@@ -825,12 +775,7 @@
               "label": "Boston Dynamics · all-new Atlas",
               "url": "https://bostondynamics.com/blog/electric-new-era-for-atlas/"
             }
-          ],
-          "image": {
-            "file": "Atlas_climbing_into_a_vehicle.jpg",
-            "credit": "Boston Dynamics Atlas in action, DARPA (Public domain)",
-            "alt": "Boston Dynamics Atlas humanoid"
-          }
+          ]
         },
         {
           "year": "2024-02",
@@ -847,12 +792,7 @@
               "label": "Reuters · Figure raises $675M",
               "url": "https://www.reuters.com/technology/figure-ai-startup-building-humanoid-robots-raises-675-million-bezos-nvidia-2024-02-29/"
             }
-          ],
-          "image": {
-            "file": "Figure-ai-logo.svg",
-            "credit": "Figure AI logo (CC-BY 4.0)",
-            "alt": "Figure AI"
-          }
+          ]
         },
         {
           "year": "2024-03",
@@ -953,12 +893,7 @@
               "label": "Reuters · China's humanoid push",
               "url": "https://www.reuters.com/technology/chinas-humanoid-robot-makers-race-build-cheaper-machines-2024-04-15/"
             }
-          ],
-          "image": {
-            "file": "Unitree_G1.jpg",
-            "credit": "Unitree G1 — flagship of China's 'six tigers' (CC0)",
-            "alt": "Unitree G1 humanoid"
-          }
+          ]
         },
         {
           "year": "2025-03",
@@ -988,12 +923,7 @@
               "label": "Figure · Figure 02",
               "url": "https://www.figure.ai/news/figure-02"
             }
-          ],
-          "image": {
-            "file": "Figure-ai-logo.svg",
-            "credit": "Figure AI (CC-BY 4.0)",
-            "alt": "Figure AI logo"
-          }
+          ]
         },
         {
           "year": "2026 (展望)",
@@ -1011,12 +941,7 @@
               "url": "https://www.morganstanley.com/ideas/humanoid-robot-market-5-trillion-by-2050"
             }
           ],
-          "yearEn": "2026 (outlook)",
-          "image": {
-            "file": "Unitree_G1.jpg",
-            "credit": "Unitree G1 — first humanoid at consumer-level pricing (CC0)",
-            "alt": "Unitree humanoid"
-          }
+          "yearEn": "2026 (outlook)"
         }
       ]
     }
