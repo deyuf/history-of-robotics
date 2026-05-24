@@ -172,10 +172,13 @@ describe('humanoid.html — sister page rendering', () => {
     links.forEach(a => expect(a.href).toMatch(/^https?:\/\//));
   });
 
-  it('every humanoid event has an image (100% coverage)', () => {
+  it('humanoid edition has strong image coverage (≥ 70 % of events)', () => {
+    // We intentionally drop images on events for which no faithful Wikimedia
+    // photo exists (e.g. Sanctuary Phoenix, 1X NEO, Fourier GR-1) rather
+    // than reuse a mismatched proxy from a different company.
     const events = document.querySelectorAll('.event');
     const withImg = document.querySelectorAll('.event-img img');
-    expect(withImg.length).toBe(events.length);
+    expect(withImg.length / events.length).toBeGreaterThanOrEqual(0.70);
   });
 
   it('cross-page link in the cover body points to the main chronicle', () => {
