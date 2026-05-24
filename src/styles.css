@@ -335,10 +335,10 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; text-decoratio
 }
 .rail-right a {
   display: grid;
-  grid-template-columns: 36px 1fr;
-  gap: 6px;
+  grid-template-columns: 52px minmax(0, 1fr);
+  gap: 8px;
   align-items: baseline;
-  padding: 6px 0 6px 14px;
+  padding: 6px 8px 6px 14px;
   margin: 1px 0;
   color: var(--ink-mute);
   border: 1px solid transparent;
@@ -372,6 +372,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; text-decoratio
   font-weight: 500;
   color: var(--ink-mute);
   letter-spacing: .08em;
+  white-space: nowrap;
   text-transform: uppercase;
 }
 .rail-right a.active .roman { color: var(--ink); }
