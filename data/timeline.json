@@ -33,13 +33,13 @@
       "methods_section": "资料来源与编纂原则",
       "methods_eyebrow": "METHODOLOGY · 方法",
       "methods_para_1": "本编年史按以下原则编纂：（1）所有事件优先引用<strong>原始来源</strong>——公司官方网站、专利数据库、学术论文、博物馆藏品；（2）次级来源限于<strong>同行评议或编辑流程明确的媒体</strong>：IEEE Spectrum、Nature、Science、MIT Technology Review、Reuters、Bloomberg、NYT；（3）图片采用 Wikimedia Commons / NASA / 各公司官方 公共领域或 CC 授权图，文件路径采用稳定的 <code>Special:FilePath</code> 重定向；（4）凡涉及商业承诺或预测，明确标注'展望'并附预测主体与日期。",
-      "methods_para_2": "技术上，本站为纯静态单页站点：HTML / CSS / 原生 JS，无构建步骤，时间线数据存储于 <code>/data/timeline.json</code>，便于贡献者通过 Pull Request 增补事件。视觉系统借鉴 <a href=\"https://historyofmarket.com\" target=\"_blank\" rel=\"noopener\">historyofmarket.com</a> 的 ledger 编辑风：Fraunces 衬线作正文与标题、Bricolage Grotesque 作品牌字、JetBrains Mono 作数据与代码、Noto Serif SC 作中文衬线。",
+      "methods_para_2": "技术上，本站为纯静态单页站点：HTML / CSS / 原生 JS，无构建步骤，时间线数据存储于 <code>/data/timeline.json</code>，便于贡献者通过 Pull Request 增补事件。视觉风格：Fraunces 衬线作正文与标题、Bricolage Grotesque 作品牌字、JetBrains Mono 作数据与代码、Noto Serif SC 作中文衬线。",
       "methods_para_3": "欢迎在 GitHub 提交修正、补充事件或本地化翻译。",
       "methods_sources_head": "主要参考机构与平台",
       "hero_kicker": "A CHRONICLE · 编年史 · EIGHT ERAS · 八个时代",
       "hero_title": "从神殿、工厂、家庭<br/>到具身的<em>通用智能</em>",
       "footer_left": "© 2026 · History of Robot ·<br/>内容采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY 4.0</a> 协议。<br/>欢迎引用、翻译与二次创作，请保留来源。",
-      "footer_right": "Made with paper, ink &amp; gold.<br/>视觉风格致敬 <a href=\"https://historyofmarket.com\" target=\"_blank\" rel=\"noopener\">historyofmarket.com</a>.<br/><a href=\"https://github.com/deyuf/history-of-robot\" target=\"_blank\" rel=\"noopener\">github.com/deyuf/history-of-robot</a>",
+      "footer_right": "<a href=\"https://github.com/deyuf/history-of-robot\" target=\"_blank\" rel=\"noopener\">github.com/deyuf/history-of-robot</a>",
       "lang_toggle": "EN",
       "era_eyebrow": "ERA"
     },
@@ -65,13 +65,13 @@
       "methods_section": "Sources & Editorial Principles",
       "methods_eyebrow": "METHODOLOGY",
       "methods_para_1": "Editorial principles: (1) Every event cites a <strong>primary source</strong> first — company sites, patent databases, peer-reviewed papers, museum holdings; (2) Secondary sources are limited to <strong>peer-reviewed or editorially-vetted outlets</strong>: IEEE Spectrum, Nature, Science, MIT Technology Review, Reuters, Bloomberg, NYT; (3) Images are pulled from Wikimedia Commons / NASA / official company releases under public domain or CC licenses, via stable <code>Special:FilePath</code> redirects; (4) Forward-looking statements are flagged explicitly with their source and date.",
-      "methods_para_2": "Technically the site is a pure static SPA — HTML / CSS / vanilla JS, no build step. Timeline data lives in <code>/data/timeline.json</code> so contributors can add events through a pull request. The visual system pays homage to <a href=\"https://historyofmarket.com\" target=\"_blank\" rel=\"noopener\">historyofmarket.com</a>'s editorial ledger: Fraunces serif for body and display, Bricolage Grotesque for brand, JetBrains Mono for data and code, Noto Serif SC for Chinese typography.",
+      "methods_para_2": "Technically the site is a pure static SPA — HTML / CSS / vanilla JS, no build step. Timeline data lives in <code>/data/timeline.json</code> so contributors can add events through a pull request. Typography stack: Fraunces serif for body and display, Bricolage Grotesque for brand, JetBrains Mono for data and code, Noto Serif SC for Chinese typography.",
       "methods_para_3": "Pull requests welcome: corrections, additions, or localizations.",
       "methods_sources_head": "Reference institutions and platforms",
       "hero_kicker": "A CHRONICLE · EIGHT ERAS",
       "hero_title": "From the Temple, the Factory, and the Home<br/>to <em>Embodied General Intelligence</em>",
       "footer_left": "© 2026 · History of Robot ·<br/>Content released under <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY 4.0</a>.<br/>Cite, translate and remix freely with attribution.",
-      "footer_right": "Made with paper, ink &amp; gold.<br/>Visual homage to <a href=\"https://historyofmarket.com\" target=\"_blank\" rel=\"noopener\">historyofmarket.com</a>.<br/><a href=\"https://github.com/deyuf/history-of-robot\" target=\"_blank\" rel=\"noopener\">github.com/deyuf/history-of-robot</a>",
+      "footer_right": "<a href=\"https://github.com/deyuf/history-of-robot\" target=\"_blank\" rel=\"noopener\">github.com/deyuf/history-of-robot</a>",
       "lang_toggle": "中文",
       "era_eyebrow": "ERA"
     }
@@ -1677,7 +1677,8 @@
               "label": "Morgan Stanley · humanoid primer",
               "url": "https://www.morganstanley.com/ideas/humanoid-robot-market-5-trillion-by-2050"
             }
-          ]
+          ],
+          "yearEn": "2026 (outlook)"
         }
       ]
     }

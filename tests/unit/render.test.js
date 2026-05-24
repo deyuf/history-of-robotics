@@ -112,7 +112,37 @@ describe('index.html — main chronicle rendering', () => {
 
   it('renders footer left + right blocks', () => {
     expect(document.getElementById('footer-left').textContent).toContain('CC BY 4.0');
-    expect(document.getElementById('footer-right').textContent).toContain('historyofmarket');
+    expect(document.getElementById('footer-right').textContent).toContain('github');
+  });
+
+  it('does NOT leak Chinese characters anywhere on the page in EN mode', () => {
+    // Era titles, leads, tabs, rail, hero — everything should be pure English.
+    // Source-label citations may legitimately contain Chinese (e.g. MIIT
+    // policy paper title), so we exclude .event-sources from the scan.
+    const clone = document.body.cloneNode(true);
+    clone.querySelectorAll('.event-sources, script, style').forEach(n => n.remove());
+    const txt = clone.textContent;
+    expect(/[一-鿿]/.test(txt), 'Found CJK characters in EN-mode body').toBe(false);
+  });
+
+  it('does not credit historyofmarket anywhere on the page', () => {
+    expect(document.body.textContent.toLowerCase()).not.toContain('historyofmarket');
+  });
+
+  it('renders a right-side navigation rail with section + sister title', () => {
+    const rail = document.getElementById('rail-right');
+    expect(rail).toBeTruthy();
+    expect(rail.querySelectorAll('a[data-target]').length).toBeGreaterThanOrEqual(11);
+    // Sister-title block must contain a link to the humanoid edition
+    const sister = rail.querySelector('.sister-block a');
+    expect(sister).toBeTruthy();
+    expect(sister.getAttribute('href')).toBe('./humanoid.html');
+  });
+
+  it('mast-foot prominently shows the sister-edition link', () => {
+    const sister = document.querySelector('.mast-foot a.is-sister');
+    expect(sister).toBeTruthy();
+    expect(sister.getAttribute('href')).toBe('./humanoid.html');
   });
 });
 
@@ -150,5 +180,18 @@ describe('humanoid.html — sister page rendering', () => {
     const body = document.getElementById('hero-body');
     const link = body.querySelector('a[href$="index.html"]');
     expect(link).toBeTruthy();
+  });
+
+  it('right rail has roster/compare/people/method + sister title', () => {
+    const rail = document.getElementById('rail-right');
+    expect(rail).toBeTruthy();
+    const sister = rail.querySelector('.sister-block a');
+    expect(sister).toBeTruthy();
+    expect(sister.getAttribute('href')).toBe('./index.html');
+  });
+
+  it('mast-foot shows the main-chronicle link as the sister', () => {
+    const sister = document.querySelector('.mast-foot a.is-sister');
+    expect(sister.getAttribute('href')).toBe('./index.html');
   });
 });

@@ -151,6 +151,52 @@
     `).join('');
   }
 
+  // ── Render: right-side rail TOC ──────────────────────────────
+  function renderRailRight() {
+    const rail = $('#rail-right');
+    if (!rail) return;
+    const d = state.data;
+    const eraItems = d.eras.map((e, i) => ({
+      target: e.id, roman: roman(i + 1), title: tabLabel(e)
+    }));
+    const sectionItems = (page === 'humanoid'
+      ? [
+          { target: 'roster',  title: state.lang === 'en' ? 'Roster'     : '机型档案' },
+          { target: 'compare', title: state.lang === 'en' ? 'Compare'    : '对照表' },
+          { target: 'people',  title: state.lang === 'en' ? 'People'     : '人物' },
+          { target: 'method',  title: state.lang === 'en' ? 'Method'     : '方法' }
+        ]
+      : [
+          { target: 'data',    title: state.lang === 'en' ? 'Data'       : '数据' },
+          { target: 'people',  title: state.lang === 'en' ? 'People'     : '人物' },
+          { target: 'method',  title: state.lang === 'en' ? 'Method'     : '方法' }
+        ]);
+    const startRoman = eraItems.length;
+    const sectionHTML = sectionItems.map((s, i) => `
+      <li><a href="#${s.target}" data-target="${s.target}">
+        <span class="roman">§ ${esc(roman(startRoman + i + 1))}</span>
+        <span class="ttl">${esc(s.title)}</span>
+      </a></li>`).join('');
+    const eraHTML = eraItems.map(e => `
+      <li><a href="#${e.target}" data-target="${e.target}">
+        <span class="roman">§ ${esc(e.roman)}</span>
+        <span class="ttl">${esc(e.title)}</span>
+      </a></li>`).join('');
+
+    const sister = page === 'humanoid'
+      ? { href: './index.html', title: state.lang === 'en' ? 'Main chronicle' : '主编年史' }
+      : { href: './humanoid.html', title: state.lang === 'en' ? 'Humanoid edition' : '人形机器人特刊' };
+    const sisterHead = state.lang === 'en' ? 'Sister title' : '姊妹刊';
+
+    rail.innerHTML = `
+      <ol>${eraHTML}${sectionHTML}</ol>
+      <div class="sister-block">
+        <div class="head">${esc(sisterHead)}</div>
+        <a href="${sister.href}"><span>${esc(sister.title)}</span></a>
+      </div>
+    `;
+  }
+
   // ── Render: era index ────────────────────────────────────────
   function renderEraIndex() {
     const d = state.data;
@@ -174,7 +220,6 @@
           <div>
             <div class="era-marker">§ ${esc(roman(i + 1))} &middot; ${esc(pick(era, 'range'))}</div>
             <h2>${esc(pick(era, 'title'))}</h2>
-            <div class="era-range">${esc(state.lang === 'en' ? era.title : era.titleEn || '')}</div>
           </div>
           <p class="era-lead">${esc(pick(era, 'lead'))}</p>
         </header>
@@ -198,7 +243,7 @@
       </figure>` : '';
     return `
       <li class="event">
-        <div class="event-year tnum">${esc(ev.year)}</div>
+        <div class="event-year tnum">${esc(pick(ev, 'year'))}</div>
         <div class="event-body">
           <h3>${esc(pick(ev, 'title'))}</h3>
           <p class="event-desc">${esc(pick(ev, 'desc'))}</p>
@@ -608,23 +653,25 @@
     });
   }
 
-  // ── Scroll → TOC active state ────────────────────────────────
+  // ── Scroll → top tabs + right-rail active state ──────────────
   function setupScroll() {
     if (!('IntersectionObserver' in window)) return;
     const tabs = $$('#tabs a');
-    const byId = new Map(tabs.map(a => [a.dataset.target, a]));
-    const eras = $$('.era');
+    const railLinks = $$('#rail-right a[data-target]');
+    const tabsById = new Map(tabs.map(a => [a.dataset.target, a]));
+    const railById = new Map(railLinks.map(a => [a.dataset.target, a]));
+    const targets  = $$('[id]').filter(el =>
+      el.matches('.era, .section, #data, #people, #method, #roster, #compare')
+    );
     const io = new IntersectionObserver(entries => {
       entries.forEach(en => {
-        const a = byId.get(en.target.id);
-        if (!a) return;
-        if (en.isIntersecting) {
-          tabs.forEach(l => l.classList.remove('active'));
-          a.classList.add('active');
-        }
+        if (!en.isIntersecting) return;
+        const id = en.target.id;
+        tabs.forEach(l => l.classList.toggle('active', l.dataset.target === id));
+        railLinks.forEach(l => l.classList.toggle('active', l.dataset.target === id));
       });
     }, { rootMargin: '-30% 0px -55% 0px', threshold: 0 });
-    eras.forEach(e => io.observe(e));
+    targets.forEach(t => io.observe(t));
   }
 
   // ── Smooth scroll for hash links ─────────────────────────────
@@ -661,6 +708,7 @@
     }
     renderMethod();
     renderFooter();
+    renderRailRight();
     setupScroll();
   }
 
