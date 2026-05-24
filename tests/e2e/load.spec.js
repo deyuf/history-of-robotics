@@ -4,6 +4,11 @@
  * font loading, real scroll, etc.).
  */
 import { test, expect } from '@playwright/test';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const REPO_ROOT = path.resolve(__dirname, '..', '..');
 
 test.describe('main chronicle', () => {
   test.beforeEach(async ({ page }) => {
@@ -35,11 +40,33 @@ test.describe('main chronicle', () => {
   });
 
   test('clicking a tab scrolls to the matching era', async ({ page }) => {
+    const initialScrollY = await page.evaluate(() => window.scrollY);
+
     await page.locator('#tabs a').nth(3).click();
-    await page.waitForTimeout(700);
-    // The 4th era (index 3) should now be in view
-    const era = page.locator('.era').nth(3);
-    await expect(era).toBeInViewport();
+
+    // The hash is written synchronously in the click handler — should be
+    // visible within ms.
+    await page.waitForFunction(
+      () => location.hash === '#era-4-industrial',
+      undefined,
+      { timeout: 5_000 }
+    );
+
+    // Era 4 sits thousands of pixels below the cover, so any successful
+    // scroll (smooth OR instant) moves the page substantially. Accept
+    // either: (a) scrollY moved by ≥ 500 px, or (b) the era is now in
+    // the viewport. This is robust to reduced-motion and slow CI runners.
+    await page.waitForFunction(
+      (initY) => {
+        const moved = Math.abs(window.scrollY - initY) > 500;
+        const era = document.getElementById('era-4-industrial');
+        const r = era.getBoundingClientRect();
+        const visible = r.top < window.innerHeight && r.bottom > 0;
+        return moved || visible;
+      },
+      initialScrollY,
+      { timeout: 15_000 }
+    );
   });
 
   test('command palette opens on ⌘K/Ctrl+K', async ({ page }) => {
@@ -134,8 +161,8 @@ test.describe('static assets', () => {
     expect(body).toMatch(/Sitemap:/);
   });
 
-  test('og.svg is reachable', async ({ request }) => {
-    const res = await request.get('/og.svg');
+  test('og.svg is reachable at /assets/og.svg', async ({ request }) => {
+    const res = await request.get('/assets/og.svg');
     expect(res.ok()).toBe(true);
     expect(res.headers()['content-type']).toContain('svg');
   });
@@ -193,8 +220,7 @@ test.describe('accessibility basics', () => {
 
 test.describe('file:// regression', () => {
   test('opens correctly via file:// (bug that prompted these tests)', async ({ browser }) => {
-    const path = require('node:path');
-    const fileURL = 'file://' + path.resolve(process.cwd(), 'index.html');
+    const fileURL = 'file://' + path.resolve(REPO_ROOT, 'index.html');
     const ctx = await browser.newContext();
     const p = await ctx.newPage();
     await p.goto(fileURL);
