@@ -14,9 +14,9 @@
   <line x1="60" y1="552" x2="1140" y2="552" stroke="#0A0A0A" stroke-width="1"/>
   <text x="60" y="56" class="mono ink" font-size="14" letter-spacing="3">VOL. I · NO. 01 · CC BY 4.0</text>
   <text x="1140" y="56" class="mono mute" font-size="14" letter-spacing="3" text-anchor="end">BOUND EDITION · ONLINE</text>
-  <text x="600" y="270" class="display ink" font-size="128" letter-spacing="-4" text-anchor="middle">HISTORY OF ROBOT</text>
+  <text x="600" y="270" class="display ink" font-size="128" letter-spacing="-4" text-anchor="middle">HISTORY OF ROBOTICS</text>
   <text x="600" y="320" class="mono mute" font-size="20" letter-spacing="8" text-anchor="middle">· THE CHRONICLE OF ROBOTICS ·</text>
   <text x="600" y="430" class="serif ink" font-style="italic" font-size="36" text-anchor="middle">From mythic automata to embodied intelligence.</text>
   <text x="600" y="485" class="mono mute" font-size="16" letter-spacing="3" text-anchor="middle">EIGHT ERAS · 81 MILESTONES · EVERY EVENT SOURCED</text>
-  <text x="600" y="595" class="mono mute" font-size="14" letter-spacing="4" text-anchor="middle">historyofrobot.org</text>
+  <text x="600" y="595" class="mono mute" font-size="14" letter-spacing="4" text-anchor="middle">historyofrobotics.org</text>
 </svg>

@@ -95,7 +95,7 @@ describe('sitemap.xml', () => {
   it('is valid XML and references both pages', () => {
     expect(SITEMAP).toMatch(/<\?xml\s/);
     expect(SITEMAP).toContain('<urlset');
-    expect(SITEMAP).toContain('historyofrobot.org/');
+    expect(SITEMAP).toContain('historyofrobotics.org/');
     expect(SITEMAP).toContain('humanoid.html');
   });
 

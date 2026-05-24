@@ -176,6 +176,12 @@ describe('humanoid.html — sister page rendering', () => {
     links.forEach(a => expect(a.href).toMatch(/^https?:\/\//));
   });
 
+  it('every humanoid event has an image (100% coverage)', () => {
+    const events = document.querySelectorAll('.event');
+    const withImg = document.querySelectorAll('.event-img img');
+    expect(withImg.length).toBe(events.length);
+  });
+
   it('cross-page link in the cover body points to the main chronicle', () => {
     const body = document.getElementById('hero-body');
     const link = body.querySelector('a[href$="index.html"]');

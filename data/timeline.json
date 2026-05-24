@@ -1,8 +1,8 @@
 {
   "meta": {
-    "title": "History of Robot",
-    "titleEn": "History of Robot",
-    "subtitle": "机器人编年史 · 从神话自动机到具身智能",
+    "title": "History of Robotics",
+    "titleEn": "History of Robotics",
+    "subtitle": "机器人学编年史 · 从神话自动机到具身智能",
     "subtitleEn": "A Chronicle — From Mythic Automata to Embodied Intelligence",
     "lead": "三千年来，人类不断尝试把生命的运动从血肉之躯中剥离出来——先借齿轮与弹簧，再借电路与代码，如今又借神经网络。这份编年史按八个时代追踪机器人从神话与玩具一路演化为工厂主力、服务伙伴乃至具身通用智能的轨迹。每个里程碑都附原始来源，便于追溯与延伸阅读。",
     "leadEn": "For three thousand years humanity has tried to lift the motions of life out of flesh — first with gears and springs, then with circuits and code, now with neural networks. This chronicle traces robotics across eight eras, from myth and toy to factory workhorse, household companion and embodied general intelligence. Every milestone is anchored to a primary source.",
@@ -38,7 +38,7 @@
       "methods_sources_head": "主要参考机构与平台",
       "hero_kicker": "A CHRONICLE · 编年史 · EIGHT ERAS · 八个时代",
       "hero_title": "从神殿、工厂、家庭<br/>到具身的<em>通用智能</em>",
-      "footer_left": "© 2026 · History of Robot ·<br/>内容采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY 4.0</a> 协议。<br/>欢迎引用、翻译与二次创作，请保留来源。",
+      "footer_left": "© 2026 · History of Robotics ·<br/>内容采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY 4.0</a> 协议。<br/>欢迎引用、翻译与二次创作，请保留来源。",
       "footer_right": "<a href=\"https://github.com/deyuf/history-of-robot\" target=\"_blank\" rel=\"noopener\">github.com/deyuf/history-of-robot</a>",
       "lang_toggle": "EN",
       "era_eyebrow": "ERA"
@@ -70,7 +70,7 @@
       "methods_sources_head": "Reference institutions and platforms",
       "hero_kicker": "A CHRONICLE · EIGHT ERAS",
       "hero_title": "From the Temple, the Factory, and the Home<br/>to <em>Embodied General Intelligence</em>",
-      "footer_left": "© 2026 · History of Robot ·<br/>Content released under <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY 4.0</a>.<br/>Cite, translate and remix freely with attribution.",
+      "footer_left": "© 2026 · History of Robotics ·<br/>Content released under <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY 4.0</a>.<br/>Cite, translate and remix freely with attribution.",
       "footer_right": "<a href=\"https://github.com/deyuf/history-of-robot\" target=\"_blank\" rel=\"noopener\">github.com/deyuf/history-of-robot</a>",
       "lang_toggle": "中文",
       "era_eyebrow": "ERA"

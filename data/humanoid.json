@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "History of Humanoid Robot",
-    "titleEn": "History of Humanoid Robot",
+    "title": "History of Humanoid Robotics",
+    "titleEn": "History of Humanoid Robotics",
     "subtitle": "人形机器人简史 · 五十年的双足、双手与一颗大脑",
     "subtitleEn": "Fifty Years of Two Legs, Two Hands, and One Brain",
     "lead": "人形机器人是机器人学最古老、也最近又最热的命题。1973 年早稻田 WABOT-1 第一次让机器笨拙地走完几步；1996 年 Honda P2 揭幕，外形相似但运动复杂度跃迁；2013 年 DARPA Robotics Challenge 让全世界看见'摔倒的机器人'；2023 年 ChatGPT 后，一年内 30 家公司宣布自研通用人形。这一页只追踪'用两条腿走路、并有两只手干活'的机器：它们的身高、自由度、控制范式与商业命运。",
@@ -26,7 +26,7 @@
       "updated": "最后更新",
       "edition": "EDITION · 2026.05",
       "license": "LICENSE",
-      "rail_foot": "本页聚焦人形（双足、双臂）机器人；更广义的机器人史见姊妹页《机器人编年史》。",
+      "rail_foot": "本页聚焦人形（双足、双臂）机器人；更广义的机器人史见姊妹页《机器人学编年史》。",
       "hero_kicker": "A FOCUSED CHRONICLE · 专题史 · 1973 – 2026",
       "hero_title": "人形机器人：<em>从一步</em><br/>到一万台",
       "anatomy_eyebrow": "ANATOMY · 解剖",
@@ -44,9 +44,9 @@
       "methods_section": "资料来源与说明",
       "methods_para_1": "本页所有规格优先引用<strong>厂商官方网站、白皮书、产品发布会视频或同行评议论文</strong>；当不同来源数据冲突时，标注'报告区间'。商业承诺与出货量目标明确标注为'承诺'，与已实际发生的事件分开。",
       "methods_para_2": "图片来自 Wikimedia Commons、NASA、各公司官方新闻图，文件路径采用 <code>Special:FilePath</code> 重定向。数据 JSON 在 <code>/data/humanoid.json</code>，欢迎在 GitHub PR 增补。",
-      "methods_para_3": "本页与姊妹页《机器人编年史》共享同一套设计 token、字体与样式。",
+      "methods_para_3": "本页与姊妹页《机器人学编年史》共享同一套设计 token、字体与样式。",
       "methods_sources_head": "主要参考",
-      "footer_left": "© 2026 · History of Robot · Humanoid edition ·<br/>内容采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY 4.0</a>。",
+      "footer_left": "© 2026 · History of Robotics · Humanoid edition ·<br/>内容采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY 4.0</a>。",
       "footer_right": "← <a href=\"./index.html\">回到主编年史 · Main chronicle</a><br/><a href=\"https://github.com/deyuf/history-of-robot\" target=\"_blank\" rel=\"noopener\">GitHub</a>",
       "lang_toggle": "EN",
       "era_eyebrow": "ERA"
@@ -81,7 +81,7 @@
       "methods_para_2": "Images come from Wikimedia Commons, NASA and official company releases via stable <code>Special:FilePath</code> redirects. The data lives at <code>/data/humanoid.json</code> — pull requests welcome.",
       "methods_para_3": "This page shares its design tokens, fonts and styles with the main chronicle.",
       "methods_sources_head": "Reference",
-      "footer_left": "© 2026 · History of Robot · Humanoid edition ·<br/>Released under <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY 4.0</a>.",
+      "footer_left": "© 2026 · History of Robotics · Humanoid edition ·<br/>Released under <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY 4.0</a>.",
       "footer_right": "← <a href=\"./index.html\">Back to main chronicle</a><br/><a href=\"https://github.com/deyuf/history-of-robot\" target=\"_blank\" rel=\"noopener\">GitHub</a>",
       "lang_toggle": "中文",
       "era_eyebrow": "ERA"
@@ -113,7 +113,12 @@
               "label": "Wikipedia · Zero Moment Point",
               "url": "https://en.wikipedia.org/wiki/Zero_moment_point"
             }
-          ]
+          ],
+          "image": {
+            "file": "Automates-Jaquet-Droz-p1030493.jpg",
+            "credit": "Historical automata — context for early bipedal theory (CC-BY-SA 2.0)",
+            "alt": "Historical mechanical automaton"
+          }
         },
         {
           "year": "1969",
@@ -166,7 +171,12 @@
               "label": "Waseda · WL/WHL series",
               "url": "https://www.humanoid.waseda.ac.jp/booklet/kato_4.html"
             }
-          ]
+          ],
+          "image": {
+            "file": "TeaAutomatAndMechanism.jpg",
+            "credit": "Karakuri tea-doll mechanism — Japan's mechanical tradition behind Waseda's walking robots",
+            "alt": "Karakuri mechanism"
+          }
         },
         {
           "year": "1984",
@@ -209,7 +219,12 @@
               "label": "Honda · ASIMO history (E-Series)",
               "url": "https://global.honda/en/innovation/robotics/ASIMO/history.html"
             }
-          ]
+          ],
+          "image": {
+            "file": "Honda_P2_front_Honda_Collection_Hall.jpg",
+            "credit": "Honda's P-series at the Collection Hall — descendants of the secret E-series (CC-BY-SA 3.0)",
+            "alt": "Honda P-series humanoid"
+          }
         },
         {
           "year": "1993–1997",
@@ -262,7 +277,12 @@
               "label": "Honda · P3",
               "url": "https://global.honda/en/innovation/robotics/ASIMO/history.html"
             }
-          ]
+          ],
+          "image": {
+            "file": "Honda_P2_front_Honda_Collection_Hall.jpg",
+            "credit": "Honda P-series at the Honda Collection Hall (CC-BY-SA 3.0)",
+            "alt": "Honda P-series humanoid"
+          }
         },
         {
           "year": "2000",
@@ -305,7 +325,12 @@
               "label": "AIST · HRP-2 paper",
               "url": "https://staff.aist.go.jp/k.kaneko/publications/2004_iros_hrp2.pdf"
             }
-          ]
+          ],
+          "image": {
+            "file": "Honda_ASIMO_(ver._2011)_2011_Tokyo_Motor_Show.jpg",
+            "credit": "Contemporaneous Japanese humanoid — ASIMO at Tokyo Motor Show (CC-BY-SA 3.0)",
+            "alt": "Japanese humanoid of the early 2000s"
+          }
         },
         {
           "year": "2003",
@@ -464,7 +489,12 @@
               "label": "NYT · Google acquires Boston Dynamics",
               "url": "https://www.nytimes.com/2013/12/14/technology/google-adds-to-its-menagerie-of-robots.html"
             }
-          ]
+          ],
+          "image": {
+            "file": "Atlas_frontview_2013.jpg",
+            "credit": "Boston Dynamics Atlas at the DRC, DARPA (Public domain)",
+            "alt": "Boston Dynamics Atlas at the DARPA Robotics Challenge"
+          }
         },
         {
           "year": "2015-06",
@@ -613,7 +643,12 @@
               "label": "Reuters · Ford and Digit",
               "url": "https://www.reuters.com/technology/agility-robotics-build-mass-production-humanoid-robot-factory-2023-09-21/"
             }
-          ]
+          ],
+          "image": {
+            "file": "Cassie_the_robot_01.jpg",
+            "credit": "Agility Robotics Cassie — predecessor of Digit (CC-BY-SA 2.0)",
+            "alt": "Agility Robotics Cassie biped"
+          }
         },
         {
           "year": "2021-08",
@@ -626,7 +661,12 @@
               "label": "The Verge · Tesla announces Optimus",
               "url": "https://www.theverge.com/2021/8/20/22633799/tesla-bot-elon-musk-humanoid-robot-ai-day"
             }
-          ]
+          ],
+          "image": {
+            "file": "Optimus_bot_at_Tesla_showroom_-_20251118_-_01.jpg",
+            "credit": "Tesla Optimus at a Tesla showroom (CC-BY-SA 4.0)",
+            "alt": "Tesla Optimus humanoid"
+          }
         },
         {
           "year": "2022-04",
@@ -639,7 +679,12 @@
               "label": "Sanctuary AI · about",
               "url": "https://www.sanctuary.ai/about"
             }
-          ]
+          ],
+          "image": {
+            "file": "Ameca_Generation_1.jpg",
+            "credit": "Contemporaneous expressive humanoid — Engineered Arts Ameca (CC-BY-SA 4.0)",
+            "alt": "Contemporary humanoid robot"
+          }
         },
         {
           "year": "2022-09",
@@ -670,7 +715,12 @@
               "label": "Apptronik · Apollo",
               "url": "https://apptronik.com/apollo"
             }
-          ]
+          ],
+          "image": {
+            "file": "Atlas_frontview_2013.jpg",
+            "credit": "Contemporary US humanoid — Atlas, DARPA (Public domain)",
+            "alt": "US humanoid robot"
+          }
         }
       ]
     },
@@ -695,7 +745,12 @@
               "label": "Figure · about",
               "url": "https://www.figure.ai/about-us"
             }
-          ]
+          ],
+          "image": {
+            "file": "Optimus_bot_at_Tesla_showroom_-_20251118_-_01.jpg",
+            "credit": "Contemporary general-purpose humanoid — Tesla Optimus (CC-BY-SA 4.0)",
+            "alt": "General-purpose humanoid"
+          }
         },
         {
           "year": "2023-03",
@@ -708,7 +763,12 @@
               "label": "1X · Series A2",
               "url": "https://www.1x.tech/discover/openai-startup-fund-tiger-global"
             }
-          ]
+          ],
+          "image": {
+            "file": "Cassie_the_robot_01.jpg",
+            "credit": "Contemporary biped — Agility Cassie (CC-BY-SA 2.0)",
+            "alt": "Biped humanoid"
+          }
         },
         {
           "year": "2023-08",
@@ -743,7 +803,12 @@
               "label": "Sanctuary AI · Phoenix Gen 6",
               "url": "https://www.sanctuary.ai/blog/sanctuary-ai-unveils-phoenix"
             }
-          ]
+          ],
+          "image": {
+            "file": "Ameca_Generation_1.jpg",
+            "credit": "Contemporary expressive humanoid — Engineered Arts Ameca (CC-BY-SA 4.0)",
+            "alt": "Expressive humanoid"
+          }
         },
         {
           "year": "2023-10",
@@ -756,7 +821,12 @@
               "label": "Fourier · GR-1",
               "url": "https://www.fftai.com/products-gr1"
             }
-          ]
+          ],
+          "image": {
+            "file": "Unitree_G1.jpg",
+            "credit": "Contemporary Chinese humanoid — Unitree G1 (CC0)",
+            "alt": "Chinese humanoid robot"
+          }
         },
         {
           "year": "2023-12",
@@ -795,7 +865,12 @@
               "label": "Boston Dynamics · all-new Atlas",
               "url": "https://bostondynamics.com/blog/electric-new-era-for-atlas/"
             }
-          ]
+          ],
+          "image": {
+            "file": "Atlas_climbing_into_a_vehicle.jpg",
+            "credit": "Boston Dynamics Atlas in action, DARPA (Public domain)",
+            "alt": "Boston Dynamics Atlas humanoid"
+          }
         },
         {
           "year": "2024-02",
@@ -812,7 +887,12 @@
               "label": "Reuters · Figure raises $675M",
               "url": "https://www.reuters.com/technology/figure-ai-startup-building-humanoid-robots-raises-675-million-bezos-nvidia-2024-02-29/"
             }
-          ]
+          ],
+          "image": {
+            "file": "Optimus_bot_at_Tesla_showroom_-_20251118_-_01.jpg",
+            "credit": "Contemporary general-purpose humanoid (CC-BY-SA 4.0)",
+            "alt": "General-purpose humanoid"
+          }
         },
         {
           "year": "2024-03",
@@ -825,7 +905,12 @@
               "label": "NVIDIA · Project GR00T",
               "url": "https://developer.nvidia.com/blog/nvidia-announces-project-gr00t-foundation-model-for-humanoid-robots/"
             }
-          ]
+          ],
+          "image": {
+            "file": "Nvidia_logo.svg",
+            "credit": "NVIDIA logo (Public domain)",
+            "alt": "NVIDIA"
+          }
         },
         {
           "year": "2024-05",
@@ -838,7 +923,12 @@
               "label": "Unitree · G1",
               "url": "https://www.unitree.com/g1"
             }
-          ]
+          ],
+          "image": {
+            "file": "Unitree_G1.jpg",
+            "credit": "Unitree G1 humanoid (CC0)",
+            "alt": "Unitree G1 humanoid"
+          }
         },
         {
           "year": "2024-08",
@@ -851,7 +941,12 @@
               "label": "1X · NEO Beta",
               "url": "https://www.1x.tech/neo"
             }
-          ]
+          ],
+          "image": {
+            "file": "Cassie_the_robot_01.jpg",
+            "credit": "Contemporary biped reference — Agility Cassie (CC-BY-SA 2.0)",
+            "alt": "Biped humanoid"
+          }
         },
         {
           "year": "2024-10",
@@ -868,7 +963,12 @@
               "label": "Bloomberg · PI $400M",
               "url": "https://www.bloomberg.com/news/articles/2024-11-04/jeff-bezos-thrive-back-physical-intelligence-at-2-4-billion-value"
             }
-          ]
+          ],
+          "image": {
+            "file": "Atlas_climbing_into_a_vehicle.jpg",
+            "credit": "Reference humanoid embodiment — Atlas, DARPA (Public domain)",
+            "alt": "Humanoid robot"
+          }
         },
         {
           "year": "2024-12",
@@ -881,7 +981,12 @@
               "label": "Tesla AI · Optimus",
               "url": "https://www.tesla.com/AI"
             }
-          ]
+          ],
+          "image": {
+            "file": "Optimus_bot_at_Tesla_showroom_-_20251118_-_01.jpg",
+            "credit": "Tesla Optimus at a Tesla showroom (CC-BY-SA 4.0)",
+            "alt": "Tesla Optimus humanoid"
+          }
         },
         {
           "year": "2025-Q1",
@@ -898,7 +1003,12 @@
               "label": "Reuters · China's humanoid push",
               "url": "https://www.reuters.com/technology/chinas-humanoid-robot-makers-race-build-cheaper-machines-2024-04-15/"
             }
-          ]
+          ],
+          "image": {
+            "file": "Unitree_G1.jpg",
+            "credit": "Unitree G1 — flagship of China's 'six tigers' (CC0)",
+            "alt": "Unitree G1 humanoid"
+          }
         },
         {
           "year": "2025-03",
@@ -911,7 +1021,12 @@
               "label": "Apptronik · Series A",
               "url": "https://apptronik.com/news/apptronik-raises-350m-series-a"
             }
-          ]
+          ],
+          "image": {
+            "file": "Atlas_frontview_2013.jpg",
+            "credit": "Reference US humanoid — Atlas, DARPA (Public domain)",
+            "alt": "US humanoid robot"
+          }
         },
         {
           "year": "2025-Q2",
@@ -928,7 +1043,12 @@
               "label": "Figure · Figure 02",
               "url": "https://www.figure.ai/news/figure-02"
             }
-          ]
+          ],
+          "image": {
+            "file": "Optimus_bot_at_Tesla_showroom_-_20251118_-_01.jpg",
+            "credit": "Reference factory humanoid — Tesla Optimus (CC-BY-SA 4.0)",
+            "alt": "Factory-deployed humanoid"
+          }
         },
         {
           "year": "2026 (展望)",
@@ -946,7 +1066,12 @@
               "url": "https://www.morganstanley.com/ideas/humanoid-robot-market-5-trillion-by-2050"
             }
           ],
-          "yearEn": "2026 (outlook)"
+          "yearEn": "2026 (outlook)",
+          "image": {
+            "file": "Unitree_G1.jpg",
+            "credit": "Unitree G1 — first humanoid at consumer-level pricing (CC0)",
+            "alt": "Unitree humanoid"
+          }
         }
       ]
     }
