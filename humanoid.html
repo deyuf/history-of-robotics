@@ -60,6 +60,9 @@
 
   <link rel="stylesheet" href="./styles.css" />
 
+  <!-- Data preload (works on file:// too). Falls back to fetch if absent. -->
+  <script src="./data/humanoid.data.js" defer></script>
+
   <script>
     (function () {
       try {
@@ -200,6 +203,6 @@
     </div>
   </dialog>
 
-  <script src="./app.js"></script>
+  <script src="./app.bundle.js" defer></script>
 </body>
 </html>
