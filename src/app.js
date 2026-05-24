@@ -1,5 +1,3 @@
-/* AUTO-GENERATED from app.js. Run `npm run build` to refresh. */
-(function () { 'use strict';
 /* =============================================================
    History of Robot — main application script (ES module)
    - Shared between index.html (main chronicle) and humanoid.html
@@ -186,12 +184,10 @@
     const sister = page === 'humanoid'
       ? { href: './index.html', title: state.lang === 'en' ? 'Main chronicle' : '主编年史' }
       : { href: './humanoid.html', title: state.lang === 'en' ? 'Humanoid edition' : '人形机器人特刊' };
-    const sisterHead = state.lang === 'en' ? 'Sister title' : '姊妹刊';
 
     rail.innerHTML = `
       <ol>${eraHTML}${sectionHTML}</ol>
       <div class="sister-block">
-        <div class="head">${esc(sisterHead)}</div>
         <a href="${sister.href}"><span>${esc(sister.title)}</span></a>
       </div>
     `;
@@ -762,5 +758,12 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
   else boot();
 
-
-})();
+// ── Named exports for tests (no-op when loaded as a browser module) ──
+export {
+  boot, loadData, renderAll,
+  renderCover, renderTabs, renderEras, renderEvent, renderPeople,
+  renderRoster, renderCompare, renderMethod, renderFooter,
+  renderIndustrialChart, renderFundingChart,
+  setupThemeToggle, setupLangToggle, setupCommandPalette,
+  state, tabLabel, roman
+};

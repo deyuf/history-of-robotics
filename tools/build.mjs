@@ -29,18 +29,18 @@ window.__HOR_DATA__[${JSON.stringify(s.key)}] = ${JSON.stringify(data)};
   console.log(`  ${s.out}  (${(body.length / 1024).toFixed(1)} KB)`);
 }
 
-// ── 2. app.bundle.js — strip ESM exports, wrap in IIFE ─────────
-let app = await readFile(join(root, 'app.js'), 'utf8');
+// ── 2. dist/app.bundle.js — strip ESM exports, wrap in IIFE ─────
+let app = await readFile(join(root, 'src/app.js'), 'utf8');
 // Remove the trailing `export { … };` block.
 app = app.replace(/\n\/\/ ── Named exports[\s\S]*?export\s*\{[\s\S]*?\};?\s*$/m, '\n');
 // Wrap in IIFE; classic-script semantics work on file:// in Chrome.
 const bundle =
-`/* AUTO-GENERATED from app.js. Run \`npm run build\` to refresh. */
+`/* AUTO-GENERATED from src/app.js. Run \`npm run build\` to refresh. */
 (function () { 'use strict';
 ${app}
 })();
 `;
-await writeFile(join(root, 'app.bundle.js'), bundle);
-console.log(`  app.bundle.js  (${(bundle.length / 1024).toFixed(1)} KB)`);
+await writeFile(join(root, 'dist/app.bundle.js'), bundle);
+console.log(`  dist/app.bundle.js  (${(bundle.length / 1024).toFixed(1)} KB)`);
 
 console.log('build: OK');

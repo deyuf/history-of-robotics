@@ -26,7 +26,7 @@ describe('boot — error handling', () => {
     window.fetch = undefined;
 
     vi.resetModules();
-    await import('../../app.js?t=err1=' + Date.now());
+    await import('../../src/app.js?t=err1=' + Date.now());
     await new Promise(r => setTimeout(r, 20));
 
     const erasErr = document.querySelector('#eras p[style*="negative"]');
@@ -59,7 +59,7 @@ describe('boot — error handling', () => {
     delete window.__HOR_DATA__;
 
     vi.resetModules();
-    await import('../../app.js?t=inline=' + Date.now());
+    await import('../../src/app.js?t=inline=' + Date.now());
     await new Promise(r => setTimeout(r, 20));
 
     expect(document.querySelectorAll('.era').length).toBe(8);
