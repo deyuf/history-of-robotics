@@ -1,8 +1,8 @@
 name: CI / CD
 
 on:
-  push:
-    branches: [main]
+  push:               # tests run on every branch; deploy jobs are
+                      # gated to refs/heads/main by their own `if:`.
   pull_request:
   workflow_dispatch:
 
