@@ -675,16 +675,23 @@
   // ── Smooth scroll for hash links ─────────────────────────────
   function setupHashLinks() {
     document.addEventListener('click', e => {
+      // Ignore middle/right click and modifier-clicks so the user can still
+      // open the link in a new tab.
+      if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
       const a = e.target.closest('a[href^="#"]');
       if (!a) return;
       const id = a.getAttribute('href').slice(1);
       if (!id) return;
       const el = document.getElementById(id);
-      if (el) {
-        e.preventDefault();
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        history.replaceState(null, '', '#' + id);
-      }
+      if (!el) return;
+      e.preventDefault();
+      // Set the hash FIRST (synchronous) so anything observing
+      // `location.hash` sees the update even if scrollIntoView throws
+      // or is silently dropped (some headless / reduced-motion runtimes).
+      try { history.replaceState(null, '', '#' + id); } catch (_) {}
+      // Honour the CSS `scroll-behavior` (smooth in normal mode, auto
+      // under prefers-reduced-motion) by not overriding it from JS.
+      try { el.scrollIntoView({ block: 'start' }); } catch (_) {}
     });
   }
 
