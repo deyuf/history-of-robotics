@@ -86,6 +86,20 @@ describe('index.html — main chronicle rendering', () => {
     });
   });
 
+  it('has rich image coverage — at least 40 event images', () => {
+    const imgs = document.querySelectorAll('.event-img img');
+    expect(imgs.length).toBeGreaterThanOrEqual(40);
+  });
+
+  it('renders portraits in people cards where available', () => {
+    const portraits = document.querySelectorAll('.person-portrait img');
+    expect(portraits.length).toBeGreaterThanOrEqual(3);
+    portraits.forEach(img => {
+      expect(img.src).toContain('Special:FilePath/');
+      expect(img.alt).toBeTruthy();
+    });
+  });
+
   it('event sources are external links with rel=noopener', () => {
     const links = document.querySelectorAll('.event-sources a');
     expect(links.length).toBeGreaterThan(100);
