@@ -77,7 +77,7 @@
   --ink-mute:   #9A9282;
   --ink-faint:  #6B6452;
   --rule:       #DCD4C0;
-  --rule-soft:  #3A352C;
+  --rule-soft:  #4A4438;
   --rule-ghost: rgba(237, 231, 214, .10);
   --accent:     #EDE7D6;
   --link:       #EDE7D6;
@@ -143,10 +143,24 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; text-decoratio
   text-transform: uppercase;
   color: var(--ink-mute);
   line-height: 1.4;
+  white-space: nowrap;
 }
 .mast-right { text-align: right; }
 .mast-left .rule, .mast-right .rule { display: inline-block; width: 18px; border-top: 1px solid var(--ink-mute); vertical-align: middle; margin-right: 8px; }
 .mast-right .rule { margin-right: 0; margin-left: 8px; }
+
+/* Mobile masthead: collapse the metadata gutters; controls drop below nameplate. */
+@media (max-width: 720px) {
+  .mast {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    padding: 12px var(--gutter) 10px;
+    gap: 10px;
+  }
+  .mast-left, .mast-right > div:last-child { display: none; }
+  .mast-right { text-align: center; }
+  .mast-controls { justify-content: center; flex-wrap: wrap; }
+}
 
 .mast-controls {
   display: flex;
@@ -221,6 +235,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; text-decoratio
   padding: 5px 12px;
   border: 1px solid transparent;
   color: var(--ink-mute);
+  white-space: nowrap;
   transition: border-color .15s, color .15s, background .15s;
 }
 .mast-foot a:hover { color: var(--ink); border-color: var(--rule-soft); text-decoration: none; }
@@ -660,8 +675,10 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; text-decoratio
   color: var(--ink);
   font-variant-numeric: tabular-nums;
   padding-top: 4px;
+  padding-right: 14px;
   border-top: 2px solid var(--ink);
   align-self: start;
+  width: fit-content;
 }
 .event-body { min-width: 0; }
 .event h3 {
@@ -719,14 +736,40 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; text-decoratio
   width: 100%;
   filter: saturate(.92) contrast(1.02);
 }
+/* Brand logos (SVG) read as flat marks, not photography — keep them
+   small, centred on the paper, with no photographic colour grading. */
+.event-img.is-logo {
+  max-width: 240px;
+  background: var(--paper);
+}
+.event-img.is-logo img {
+  width: auto;
+  max-width: 160px;
+  height: 80px;
+  margin: 16px auto;
+  filter: none;
+  object-fit: contain;
+}
 [data-theme="dark"] .event-img img { filter: saturate(.7) contrast(.92) brightness(.85); }
 .event-img figcaption {
   padding: 8px 12px;
-  font-family: var(--f-mono);
-  font-size: var(--fs-nano);
-  color: var(--ink-faint);
-  letter-spacing: .08em;
+  font-family: var(--f-serif);
+  font-size: var(--fs-caption);
+  font-style: italic;
+  color: var(--ink-mute);
+  letter-spacing: 0;
+  text-transform: none;
+  line-height: 1.4;
   border-top: 1px solid var(--rule-ghost);
+}
+.event-img figcaption .source {
+  font-family: var(--f-mono);
+  font-style: normal;
+  font-size: var(--fs-nano);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-left: 4px;
 }
 @media (max-width: 640px) {
   .event { grid-template-columns: 1fr; gap: 10px; }
