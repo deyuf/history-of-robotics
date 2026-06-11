@@ -67,18 +67,38 @@
           : '从神殿与工厂<span style="color:var(--ink-mute)">，</span><br/>到具身的<em>通用智能</em>');
     $('#hero-title').innerHTML = titleHTML;
 
-    // Split the lead between left lede and right body
-    const lead = pick(d.meta, 'lead') || '';
-    const sentences = lead.split(/(?<=[。.！？!?])\s+/);
-    const half = Math.ceil(sentences.length / 2);
-    const leftText = sentences.slice(0, half).join(' ');
-    const rightText = sentences.slice(half).join(' ');
-    $('#hero-lede').textContent = leftText;
-    $('#hero-body').innerHTML = (rightText
-      ? `<p>${esc(rightText)}</p>`
-      : '') + (page === 'humanoid'
-      ? `<p style="margin-top:18px"><a href="./index.html">${esc(state.lang === 'en' ? '← Back to the main chronicle' : '← 回到主编年史')}</a></p>`
-      : `<p style="margin-top:18px"><a href="./humanoid.html">${esc(state.lang === 'en' ? 'Read the humanoid edition →' : '阅读人形机器人特刊 →')}</a></p>`);
+    // Left lede: the meta.lead in full. Right column: an independent
+    // editorial standfirst plus a cross-publication link. Splitting the
+    // lead into halves used to leave the right column near-empty.
+    $('#hero-lede').textContent = pick(d.meta, 'lead') || '';
+
+    const standfirst = page === 'humanoid'
+      ? (state.lang === 'en'
+          ? [
+              "Of all the kinds of machine a chronicle could track, the humanoid is the most stubborn — and, since 2023, the most funded. WABOT-1 took its first awkward step in 1973; in fifty-three years it has become a venture-scale race between Atlas, Optimus, Figure, NEO, Apollo and Unitree.",
+              "This edition narrows the lens to the two-legged, two-armed machine: how the engineering crystallised across the Honda P-series, the DARPA Robotics Challenge and the LLM-and-actuator boom of the mid-2020s. Every milestone here is anchored to a primary source."
+            ]
+          : [
+              "在编年史能追踪的所有机器中，人形是最固执的一种——也是 2023 年之后融资最密集的一种。WABOT-1 在 1973 年迈出第一步；五十三年之后，它已经变成 Atlas、Optimus、Figure、NEO、Apollo 与宇树之间的资本竞赛。",
+              "本卷把镜头收窄到双足双臂的机器：工程是怎样在 Honda P 系列、DARPA Robotics Challenge 与 2020 年代中期 LLM × 驱动器浪潮里逐步成形的。每一个里程碑都附原始来源。"
+            ])
+      : (state.lang === 'en'
+          ? [
+              "Across ninety generations of engineers and three thousand years of mechanical imagination, the robot has been reinvented as oracle, marvel, factory hand, companion and now — finally — as a body for a foundation model.",
+              "This chronicle compresses that arc into eight eras and eighty-one milestones. Every entry is sourced; every chart is dated. The companion volume narrows in on humanoids."
+            ]
+          : [
+              "九十代工程师、三千年机械想象之间，机器人被一次次重新发明：先是神谕，再是奇技，再是工厂里的手臂、家庭中的伴侣，如今——终于——成为基础模型的肉身。",
+              "这份编年史把这条弧线压成八个时代、八十一个里程碑。每一条都有来源，每一张图都有日期。姊妹卷则把镜头收窄到人形机器人。"
+            ]);
+
+    const crossLink = page === 'humanoid'
+      ? { href: './index.html', label: state.lang === 'en' ? '← Back to the main chronicle' : '← 回到主编年史' }
+      : { href: './humanoid.html', label: state.lang === 'en' ? 'Read the humanoid edition →' : '阅读人形机器人特刊 →' };
+
+    $('#hero-body').innerHTML =
+      standfirst.map(p => `<p>${esc(p)}</p>`).join('') +
+      `<p style="margin-top:18px"><a href="${crossLink.href}">${esc(crossLink.label)}</a></p>`;
 
     // Stats grid
     const eventCount = d.eras.reduce((a, e) => a + e.events.length, 0);
@@ -230,12 +250,13 @@
     const sources = (ev.sources || []).map(s =>
       `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)}</a>`
     ).join('');
+    const isLogo = ev.image && /\.svg$/i.test(ev.image.file);
     const img = ev.image ? `
-      <figure class="event-img">
+      <figure class="event-img${isLogo ? ' is-logo' : ''}">
         <a href="${commonsPage(ev.image.file)}" target="_blank" rel="noopener">
           <img src="${imageURL(ev.image.file, 800)}" alt="${esc(ev.image.alt || pick(ev, 'title'))}" loading="lazy" />
         </a>
-        <figcaption>${esc(state.lang === 'en' ? 'IMAGE' : '图')} &middot; ${esc(ev.image.credit)} &middot; WIKIMEDIA</figcaption>
+        <figcaption>${esc(ev.image.credit)} <span class="source">Wikimedia</span></figcaption>
       </figure>` : '';
     return `
       <li class="event">
