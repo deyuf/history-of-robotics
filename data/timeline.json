@@ -876,8 +876,8 @@
           "year": "2000",
           "title": "ASIMO 揭幕",
           "titleEn": "ASIMO Unveiled",
-          "desc": "Honda 在 P3 基础上重新设计、推出 130 cm 高、52 kg 的 ASIMO（Advanced Step in Innovative Mobility）。它能跑、踢球、握手、识别脸——成为此后 20 年人形机器人的代名词，直至 2018 年项目终结。",
-          "descEn": "Honda redesigned the P3 into the 130 cm, 52 kg ASIMO (Advanced Step in Innovative Mobility). It could run, kick a ball, shake hands and recognise faces — the public face of humanoid robotics for two decades until the project's 2018 retirement.",
+          "desc": "Honda 在 P3 基础上重新设计、推出 120 cm 高、52 kg 的 ASIMO（Advanced Step in Innovative Mobility）。它能跑、踢球、握手、识别脸——成为此后 20 年人形机器人的代名词，直至 2018 年项目终结。",
+          "descEn": "Honda redesigned the P3 into the 120 cm, 52 kg ASIMO (Advanced Step in Innovative Mobility). It could run, kick a ball, shake hands and recognise faces — the public face of humanoid robotics for two decades until the project's 2018 retirement.",
           "image": {
             "file": "Honda_ASIMO_(ver._2011)_2011_Tokyo_Motor_Show.jpg",
             "credit": "ASIMO (2011 ver.) at Tokyo Motor Show, photo by Morio",
@@ -1038,7 +1038,7 @@
       "titleEn": "Service, Collaborative & Warehouse Robots",
       "range": "2008 – 2017",
       "rangeEn": "2008 – 2017",
-      "lead": "工业机器人在围栏内呆了 50 年；2008 年后，安全停机扭矩、关节力矩感知与机器视觉让它们走出栅栏。Universal Robots、Rethink Robotics 与 KUKA iiwa 把'人机协作'变成产品类别；Kiva 用 8.75 亿美元被 Amazon 收购，重写了仓储经济学；外科手术机器人 da Vinci 在十年内安装到 7,000 套以上。",
+      "lead": "工业机器人在围栏内呆了 50 年；2008 年后，安全停机扭矩、关节力矩感知与机器视觉让它们走出栅栏。Universal Robots、Rethink Robotics 与 KUKA iiwa 把'人机协作'变成产品类别；Kiva 用 7.75 亿美元被 Amazon 收购，重写了仓储经济学；外科手术机器人 da Vinci 在十年内安装到 7,000 套以上。",
       "leadEn": "Industrial robots had stayed inside their cages for fifty years; after 2008, safe stopping torque, joint-torque sensing and machine vision let them step out. Universal Robots, Rethink and KUKA's iiwa turned 'collaboration' into a product category; Kiva's $775M sale to Amazon rewrote warehouse economics; da Vinci surgical systems crossed 7,000 installs within the decade.",
       "events": [
         {
