@@ -43,6 +43,7 @@
 
   const isRomanIndex = ['I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII'];
   const roman = n => isRomanIndex[n - 1] || String(n);
+  const eventAnchor = (era, event) => `${era.id}-${String(event.titleEn || event.title).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || era.events.indexOf(event)}`;
 
   // ── Render: i18n swap of static text ─────────────────────────
   function renderStaticI18n() {
@@ -242,13 +243,13 @@
           <p class="era-lead">${esc(pick(era, 'lead'))}</p>
         </header>
         <ol class="events">
-          ${era.events.map(ev => renderEvent(ev)).join('')}
+          ${era.events.map(ev => renderEvent(ev, eventAnchor(era, ev))).join('')}
         </ol>
       </section>
     `).join('');
   }
 
-  function renderEvent(ev) {
+  function renderEvent(ev, id) {
     const sources = (ev.sources || []).map(s =>
       `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)}</a>`
     ).join('');
@@ -261,7 +262,7 @@
         <figcaption>${esc(ev.image.credit)} <span class="source">Wikimedia</span></figcaption>
       </figure>` : '';
     return `
-      <li class="event">
+      <li class="event"${id ? ` id="${esc(id)}"` : ''}>
         <div class="event-year tnum">${esc(pick(ev, 'year'))}</div>
         <div class="event-body">
           <h3>${esc(pick(ev, 'title'))}</h3>
@@ -517,6 +518,9 @@
       const swap = () => {
         state.lang = state.lang === 'en' ? 'zh' : 'en';
         localStorage.setItem('hor-lang', state.lang);
+        const url = new URL(location.href);
+        url.searchParams.set('lang', state.lang);
+        history.replaceState(null, '', url);
         document.documentElement.setAttribute('lang', state.lang === 'zh' ? 'zh-CN' : 'en');
         document.documentElement.setAttribute('data-lang', state.lang);
         renderAll();
@@ -537,44 +541,61 @@
 
     function buildIndex() {
       const items = [];
-      state.data.eras.forEach((e, i) => {
-        items.push({
-          kind: 'era',
-          key: `§ ${roman(i + 1)}`,
-          title: pick(e, 'title'),
-          sub: pick(e, 'range'),
-          href: '#' + e.id
-        });
-        (e.events || []).forEach(ev => {
+      const bilingual = obj => Object.entries(obj).filter(([key, value]) =>
+        typeof value === 'string' && /^(title|desc|role|range|name|company|year)(En)?$/.test(key)
+      ).map(([, value]) => value).join(' ').toLowerCase();
+      const datasets = {
+        main: window.__HOR_DATA__?.timeline,
+        humanoid: window.__HOR_DATA__?.humanoid
+      };
+      datasets[page] = state.data;
+      Object.entries(datasets).forEach(([edition, data]) => {
+        if (!data) return;
+        const hrefFor = id => edition === page ? '#' + id :
+          `./${edition === 'main' ? 'index' : 'humanoid'}.html?lang=${state.lang}#${id}`;
+        const editionLabel = edition === 'main'
+          ? (state.lang === 'en' ? 'Main chronicle' : '主编年史')
+          : (state.lang === 'en' ? 'Humanoid edition' : '人形机器人特刊');
+        data.eras.forEach((e, i) => {
           items.push({
-            kind: 'event',
-            key: ev.year,
-            title: pick(ev, 'title'),
-            sub: pick(e, 'title'),
-            href: '#' + e.id,
-            search: (pick(ev, 'title') + ' ' + pick(ev, 'desc') + ' ' + ev.year).toLowerCase()
+            kind: 'era',
+            key: `§ ${roman(i + 1)}`,
+            title: pick(e, 'title'),
+            sub: editionLabel + ' · ' + pick(e, 'range'),
+            href: hrefFor(e.id),
+            search: bilingual(e)
+          });
+          (e.events || []).forEach(ev => {
+            items.push({
+              kind: 'event',
+              key: ev.year,
+              title: pick(ev, 'title'),
+              sub: editionLabel + ' · ' + pick(e, 'title'),
+              href: hrefFor(eventAnchor(e, ev)),
+              search: bilingual(ev)
+            });
           });
         });
-      });
-      (state.data.people || []).forEach(p => {
-        items.push({
-          kind: 'person',
-          key: state.lang === 'en' ? 'PERSON' : '人物',
-          title: p.name,
-          sub: pick(p, 'role'),
-          href: '#people',
-          search: (p.name + ' ' + pick(p, 'role')).toLowerCase()
+        (data.people || []).forEach(p => {
+          items.push({
+            kind: 'person',
+            key: state.lang === 'en' ? 'PERSON' : '人物',
+            title: p.name,
+            sub: editionLabel + ' · ' + pick(p, 'role'),
+            href: hrefFor('people'),
+            search: bilingual(p)
+          });
         });
-      });
-      (state.data.roster || []).forEach(r => {
-        items.push({
-          kind: 'roster',
-          key: r.year,
-          title: r.name,
-          sub: r.company,
-          href: r.source,
-          external: true,
-          search: (r.name + ' ' + r.company).toLowerCase()
+        (data.roster || []).forEach(r => {
+          items.push({
+            kind: 'roster',
+            key: r.year,
+            title: r.name,
+            sub: r.company,
+            href: r.source,
+            external: true,
+            search: (r.name + ' ' + r.company).toLowerCase()
+          });
         });
       });
       return items;
@@ -607,7 +628,7 @@
 
     function open() {
       state.cmd.index = buildIndex();
-      state.cmd.results = search('');
+      state.cmd.results = search(input.value);
       state.cmd.selected = 0;
       render();
       dlg.showModal();
@@ -625,17 +646,24 @@
       const it = state.cmd.results[idx];
       if (!it) return;
       close();
+      const url = new URL(location.href);
+      url.searchParams.delete('q');
+      history.replaceState(null, '', url);
       if (it.external) { window.open(it.href, '_blank', 'noopener'); }
-      else {
+      else if (it.href.startsWith('#')) {
         const id = it.href.replace(/^#/, '');
         const el = document.getElementById(id);
         if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
         history.replaceState(null, '', '#' + id);
-      }
+      } else { location.assign(it.href); }
     }
 
     $('#cmd-open').addEventListener('click', open);
     input.addEventListener('input', () => {
+      const url = new URL(location.href);
+      if (input.value.trim()) url.searchParams.set('q', input.value.trim());
+      else url.searchParams.delete('q');
+      history.replaceState(null, '', url);
       state.cmd.results = search(input.value);
       state.cmd.selected = 0;
       render();
@@ -659,6 +687,8 @@
         e.preventDefault(); open();
       }
     });
+    const query = new URLSearchParams(location.search).get('q');
+    if (query) { input.value = query; open(); }
   }
 
   // ── Scroll → top tabs + right-rail active state ──────────────
@@ -756,6 +786,11 @@
       setupLangToggle();
       setupCommandPalette();
       setupHashLinks();
+      // Event anchors are rendered dynamically; restore deep links after boot.
+      if (location.hash) {
+        const target = document.getElementById(location.hash.slice(1));
+        if (target) target.scrollIntoView({ block: 'start' });
+      }
 
       // Expose minimal hooks for tests (no-op in production usage)
       window.__HOR__ = {

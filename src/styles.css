@@ -1269,3 +1269,5 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; text-decoratio
   body { background: white; color: black; }
   a { color: black; }
 }
+.mast-foot { flex-wrap: wrap; }
+.event[id] { scroll-margin-top: 80px; }

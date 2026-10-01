@@ -47,7 +47,7 @@
       "methods_para_3": "本页与姊妹页《机器人学编年史》共享同一套设计 token、字体与样式。",
       "methods_sources_head": "主要参考",
       "footer_left": "© 2026 · History of Robotics · Humanoid edition ·<br/>内容采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY 4.0</a>。",
-      "footer_right": "← <a href=\"./index.html\">回到主编年史 · Main chronicle</a><br/><a href=\"https://github.com/deyuf/history-of-robot\" target=\"_blank\" rel=\"noopener\">GitHub</a>",
+      "footer_right": "← <a href=\"./index.html\">回到主编年史 · Main chronicle</a><br/><a href=\"https://github.com/deyuf/history-of-robotics\" target=\"_blank\" rel=\"noopener\">GitHub</a>",
       "lang_toggle": "EN",
       "era_eyebrow": "ERA"
     },
@@ -82,7 +82,7 @@
       "methods_para_3": "This page shares its design tokens, fonts and styles with the main chronicle.",
       "methods_sources_head": "Reference",
       "footer_left": "© 2026 · History of Robotics · Humanoid edition ·<br/>Released under <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY 4.0</a>.",
-      "footer_right": "← <a href=\"./index.html\">Back to main chronicle</a><br/><a href=\"https://github.com/deyuf/history-of-robot\" target=\"_blank\" rel=\"noopener\">GitHub</a>",
+      "footer_right": "← <a href=\"./index.html\">Back to main chronicle</a><br/><a href=\"https://github.com/deyuf/history-of-robotics\" target=\"_blank\" rel=\"noopener\">GitHub</a>",
       "lang_toggle": "中文",
       "era_eyebrow": "ERA"
     }

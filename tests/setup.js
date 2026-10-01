@@ -68,6 +68,7 @@ export async function mountPage(which = 'main') {
 }
 
 beforeEach(() => {
+  window.history.replaceState(null, '', '/');
   document.documentElement.setAttribute('lang', 'en');
   document.documentElement.setAttribute('data-lang', 'en');
   document.documentElement.removeAttribute('data-theme');

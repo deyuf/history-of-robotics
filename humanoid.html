@@ -79,7 +79,7 @@
         var t = localStorage.getItem('hor-theme');
         if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
         if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
-        var l = localStorage.getItem('hor-lang') || new URLSearchParams(location.search).get('lang') || 'en';
+        var l = new URLSearchParams(location.search).get('lang') || localStorage.getItem('hor-lang') || 'en';
         if (l !== 'zh') l = 'en';
         document.documentElement.setAttribute('lang', l === 'zh' ? 'zh-CN' : 'en');
         document.documentElement.setAttribute('data-lang', l);
@@ -102,7 +102,7 @@
     <div class="mast-right">
       <div class="mast-controls">
         <button class="btn" id="cmd-open" type="button" aria-label="Open command palette">
-          <span aria-hidden="true">⌕</span> ARCHIVE <span class="kbd">⌘K</span>
+          <span aria-hidden="true">⌕</span> <span data-i18n-en="Search" data-i18n-zh="搜索">Search</span> <span class="kbd">⌘K</span>
         </button>
         <button class="btn" id="lang-toggle" type="button" aria-label="Switch language">EN ▾</button>
         <button class="btn" id="theme-toggle" type="button" aria-label="Switch theme">DAY</button>
@@ -112,9 +112,11 @@
   </header>
 
   <div class="mast-foot">
+    <a href="https://me.deyuf.org/" data-i18n-en="Personal site" data-i18n-zh="个人主页">Personal site</a>
+    <a href="https://urdf.deyuf.org/">URDF Studio</a>
     <a class="is-sister" href="./index.html" data-i18n-en="MAIN CHRONICLE" data-i18n-zh="主编年史">MAIN CHRONICLE</a>
     <a class="is-current" href="./humanoid.html" data-i18n-en="HUMANOID EDITION" data-i18n-zh="人形机器人特刊">HUMANOID EDITION</a>
-    <a href="https://github.com/deyuf/history-of-robot" target="_blank" rel="noopener">GITHUB</a>
+    <a href="https://github.com/deyuf/history-of-robotics" target="_blank" rel="noopener">GITHUB</a>
   </div>
 
   <nav class="section-nav" aria-label="Sections">
@@ -213,6 +215,7 @@
     </div>
   </dialog>
 
+  <script src="./data/timeline.data.js" defer></script>
   <script src="./dist/app.bundle.js" defer></script>
 </body>
 </html>
